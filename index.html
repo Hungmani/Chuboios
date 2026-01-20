@@ -42,9 +42,27 @@ body{
 }
 
 h1{
-    margin:15px 0 30px;
+    margin:15px 0 6px;
     font-size:24px;
     text-shadow:0 0 10px #38bdf8;
+}
+
+/* ✨ Text chạy */
+.marquee{
+    width:100%;
+    overflow:hidden;
+    white-space:nowrap;
+    margin-bottom:22px;
+}
+.marquee span{
+    display:inline-block;
+    font-size:13px;
+    color:#a5f3fc;
+    animation:marquee 10s linear infinite;
+}
+@keyframes marquee{
+    0%{transform:translateX(100%);}
+    100%{transform:translateX(-100%);}
 }
 
 /* Buttons */
@@ -121,7 +139,13 @@ footer{
 
 <div class="container">
     <img src="https://i.imgur.com/hR8AnxR.jpeg" class="avatar">
+
     <h1>Phi Hùng Ios</h1>
+
+    <!-- ✨ Dòng chữ chạy -->
+    <div class="marquee">
+        <span>Hack Map - Mod - Liên Quân - Upload Liên Tục ✨</span>
+    </div>
 
     <a class="box" href="#" target="_blank">🚀 Hack Map V1</a>
     <a class="box" href="#" target="_blank">🎨 Mod Skin</a>
