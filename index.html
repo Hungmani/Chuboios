@@ -47,7 +47,7 @@ h1{
     text-shadow:0 0 10px #38bdf8;
 }
 
-/* ✨ Text chạy */
+/* Text chạy */
 .marquee{
     width:100%;
     overflow:hidden;
@@ -101,18 +101,6 @@ h1{
     transform:scale(1.3) rotate(10deg);
 }
 
-/* Music */
-#musicBtn{
-    margin-top:25px;
-    padding:12px 22px;
-    font-size:16px;
-    font-weight:bold;
-    border:none;
-    border-radius:14px;
-    background:#38bdf8;
-    cursor:pointer;
-}
-
 /* Footer */
 footer{
     margin-top:30px;
@@ -142,7 +130,6 @@ footer{
 
     <h1>Phi Hùng Ios</h1>
 
-    <!-- ✨ Dòng chữ chạy -->
     <div class="marquee">
         <span>Hack Map - Mod - Liên Quân - Upload Liên Tục ✨</span>
     </div>
@@ -156,15 +143,13 @@ footer{
         <a href="#" title="Facebook">📘</a>
     </div>
 
-    <button id="musicBtn">🎶 Bật nhạc</button>
-
     <footer>© 2026 Phi Hùng Ios</footer>
 </div>
 
-<!-- 🎵 Nhạc YouTube -->
-<iframe id="yt"
+<!-- 🎵 NHẠC NỀN TỰ PHÁT -->
+<iframe id="bgmusic"
 width="0" height="0"
-src="https://www.youtube.com/embed/41iHN78XBAA?autoplay=0&loop=1&playlist=41iHN78XBAA"
+src="https://www.youtube.com/embed/C4zL5ewxPtE?autoplay=1&loop=1&playlist=C4zL5ewxPtE&mute=1"
 allow="autoplay"
 frameborder="0"></iframe>
 
@@ -183,21 +168,11 @@ function createFlower(){
 }
 setInterval(createFlower,450);
 
-/* 🎵 Music */
-let play=false;
-const btn=document.getElementById("musicBtn");
-const yt=document.getElementById("yt");
-btn.onclick=()=>{
-    if(!play){
-        yt.src="https://www.youtube.com/embed/41iHN78XBAA?autoplay=1&loop=1&playlist=41iHN78XBAA";
-        btn.innerText="🔇 Tắt nhạc";
-        play=true;
-    }else{
-        yt.src="https://www.youtube.com/embed/41iHN78XBAA?autoplay=0";
-        btn.innerText="🎶 Bật nhạc";
-        play=false;
-    }
-}
+/* 🔊 Bật tiếng khi người dùng chạm */
+document.addEventListener("click",()=>{
+    const music=document.getElementById("bgmusic");
+    music.src="https://www.youtube.com/embed/C4zL5ewxPtE?autoplay=1&loop=1&playlist=C4zL5ewxPtE";
+},{once:true});
 </script>
 
 </body>
