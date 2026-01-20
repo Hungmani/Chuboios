@@ -89,16 +89,6 @@ h1{
 .social a:hover{
     transform:scale(1.3) rotate(10deg);
 }
-#musicBtn{
-    margin-top:25px;
-    padding:12px 22px;
-    font-size:16px;
-    font-weight:bold;
-    border:none;
-    border-radius:14px;
-    background:#38bdf8;
-    cursor:pointer;
-}
 footer{
     margin-top:30px;
     font-size:13px;
@@ -132,8 +122,9 @@ footer{
     <!-- Hack Map -->
     <a class="box" href="https://link4m.com/UvbaOL" target="_blank">🚀 Hack Map V1</a>
 
+    <!-- Ảnh 16:9 -->
     <img src="https://i.imgur.com/RNqpiQf.jpeg"
-         style="width:180px;height:180px;object-fit:cover;border-radius:20px;margin:12px auto 6px;display:block;">
+         style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:18px;margin:14px 0;">
 
     <!-- Mod Skin -->
     <a class="box" href="#" target="_blank">🎨 Mod Skin</a>
@@ -144,16 +135,8 @@ footer{
         <a href="#" title="Facebook">📘</a>
     </div>
 
-    <button id="musicBtn">🎶 Bật nhạc</button>
-
     <footer>© 2026 Phi Hùng Ios</footer>
 </div>
-
-<iframe id="yt"
-width="0" height="0"
-src="https://www.youtube.com/embed/41iHN78XBAA?autoplay=0&loop=1&playlist=41iHN78XBAA"
-allow="autoplay"
-frameborder="0"></iframe>
 
 <script>
 function createFlower(){
@@ -168,21 +151,6 @@ function createFlower(){
     setTimeout(()=>f.remove(),20000);
 }
 setInterval(createFlower,450);
-
-let play=false;
-const btn=document.getElementById("musicBtn");
-const yt=document.getElementById("yt");
-btn.onclick=()=>{
-    if(!play){
-        yt.src="https://www.youtube.com/embed/41iHN78XBAA?autoplay=1&loop=1&playlist=41iHN78XBAA";
-        btn.innerText="🔇 Tắt nhạc";
-        play=true;
-    }else{
-        yt.src="https://www.youtube.com/embed/41iHN78XBAA?autoplay=0";
-        btn.innerText="🎶 Bật nhạc";
-        play=false;
-    }
-}
 </script>
 
 </body>
