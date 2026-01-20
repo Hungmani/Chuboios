@@ -1,162 +1,70 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Chú Bo Ios</title>
+    <meta charset="UTF-8">
+    <title>Phi Hùng Ios</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: #0f172a;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+        }
 
-body {
-    background: #0b0b0b;
-    color: #ffffff;
-    font-family: Arial, Helvetica, sans-serif;
-    overflow: hidden;
-}
+        .container {
+            max-width: 400px;
+            width: 100%;
+            padding: 20px;
+            text-align: center;
+        }
 
-/* ===== INTRO ===== */
-.intro {
-    position: fixed;
-    inset: 0;
-    background: #0b0b0b;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 999;
-    cursor: pointer;
-}
+        /* Avatar */
+        .avatar {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #38bdf8;
+            margin: 20px auto 10px;
+        }
 
-.intro span {
-    font-size: 18px;
-    color: #cccccc;
-    animation: blink 1.5s infinite;
-}
+        h1 {
+            font-size: 22px;
+            margin-bottom: 25px;
+        }
 
-@keyframes blink {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.4; }
-}
+        /* Box link */
+        .box {
+            background: #1e293b;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 12px;
+            text-decoration: none;
+            color: #fff;
+            display: block;
+            font-size: 18px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
 
-/* ===== MAIN PAGE ===== */
-.page {
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+        .box:hover {
+            background: #38bdf8;
+            color: #000;
+            transform: scale(1.03);
+        }
 
-.card {
-    width: 100%;
-    max-width: 420px;
-    text-align: center;
-    padding: 24px;
-}
-
-.card h1 {
-    font-size: 28px;
-    margin-bottom: 8px;
-}
-
-.desc {
-    font-size: 14px;
-    color: #bdbdbd;
-    margin-bottom: 18px;
-}
-
-.music-btn {
-    font-size: 13px;
-    color: #aaa;
-    margin-bottom: 18px;
-    cursor: pointer;
-}
-
-.link {
-    display: block;
-    width: 100%;
-    padding: 14px;
-    margin: 10px 0;
-    text-decoration: none;
-    color: #ffffff;
-    border-radius: 6px;
-    background: linear-gradient(135deg, #ff0055, #ff2f7d);
-    font-weight: bold;
-    transition: 0.25s;
-}
-
-.link:hover {
-    opacity: 0.85;
-    transform: scale(1.02);
-}
-
-.footer {
-    margin-top: 22px;
-    font-size: 12px;
-    color: #666;
-}
-</style>
+        footer {
+            margin-top: 30px;
+            font-size: 13px;
+            color: #94a3b8;
+        }
+    </style>
 </head>
 
 <body>
-
-<!-- INTRO -->
-<div class="intro" onclick="enterSite()">
-    <span>Chạm để vào trang</span>
-</div>
-
-<!-- MAIN -->
-<div class="page">
-    <div class="card">
-        <h1>Chú Bo Ios</h1>
-        <div class="desc">
-            Chuyên Mod Game • File Mod • Update Liên Tục
-        </div>
-
-        <div class="music-btn" onclick="toggleMusic(event)">
-            🔊 Bật / Tắt nhạc
-        </div>
-
-        <a class="link" href="#">Telegram</a>
-        <a class="link" href="#">YouTube</a>
-        <a class="link" href="#">Mod Skin</a>
-        <a class="link" href="#">Tải Game</a>
-        <a class="link" href="#">Get Key</a>
-        <a class="link" href="#">Tải File Mod</a>
-
-        <div class="footer">
-            © 2026 Chú Bo Ios
-        </div>
-    </div>
-</div>
-
-<!-- MUSIC -->
-<audio id="music" loop>
-    <source src="music.mp3" type="audio/mpeg">
-</audio>
-
-<script>
-const intro = document.querySelector(".intro");
-const music = document.getElementById("music");
-
-function enterSite() {
-    intro.style.display = "none";
-    document.body.style.overflow = "auto";
-    music.play().catch(()=>{});
-}
-
-function toggleMusic(e) {
-    e.stopPropagation();
-    if (music.paused) {
-        music.play();
-    } else {
-        music.pause();
-    }
-}
-</script>
-
-</body>
-</html>
+    <div class="container">
+        <!-- Avatar
