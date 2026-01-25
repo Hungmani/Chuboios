@@ -79,6 +79,25 @@ button:hover{
     border-radius:15px;
     box-shadow:0 0 15px rgba(0,0,0,0.5);
 }
+.note{
+    margin-top:15px;
+    font-size:18px;
+    color:#ffd700;
+}
+.next-step{
+    display:none;
+    margin-top:20px;
+    background:rgba(0,0,0,0.4);
+    padding:20px;
+    border-radius:15px;
+    font-size:18px;
+    line-height:1.6;
+}
+.support{
+    margin-top:15px;
+    font-size:16px;
+    color:#00ffd5;
+}
 footer{
     text-align:center;
     margin-top:40px;
@@ -128,6 +147,24 @@ footer{
 <div class="job payment" id="payment">
     <h2>💳 Thanh Toán Nhiệm Vụ</h2>
     <img src="https://i.imgur.com/zO6u3LO.jpeg" alt="Thanh toán nhiệm vụ">
+
+    <div class="note">
+        👉 Sau khi thanh toán, nhấn nút bên dưới để xem bước tiếp theo
+    </div>
+
+    <button onclick="showNextStep()">Tôi đã thanh toán</button>
+
+    <div class="next-step" id="nextStep">
+        ✅ <b>Bước tiếp theo:</b><br>
+        – Chụp màn hình thanh toán<br>
+        – Gửi minh chứng cho admin<br>
+        – Nhận nhiệm vụ & bắt đầu làm việc<br>
+        – Hoàn thành sẽ được thanh toán thưởng
+    </div>
+
+    <div class="support">
+        ⚠️ Nếu gặp sự cố, liên hệ Telegram: <b>Xod50</b>
+    </div>
 </div>
 
 <footer>
@@ -137,10 +174,13 @@ footer{
 </div>
 
 <script>
-function scrollToPayment() {
+function scrollToPayment(){
     document.getElementById("payment").scrollIntoView({
-        behavior: "smooth"
+        behavior:"smooth"
     });
+}
+function showNextStep(){
+    document.getElementById("nextStep").style.display="block";
 }
 </script>
 
