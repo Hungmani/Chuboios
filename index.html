@@ -101,7 +101,7 @@ footer{
         📌 Nội dung nhiệm vụ:<br>
         – Comment 30 bài viết Facebook theo mẫu
     </div>
-    <button>Tham gia nhiệm vụ</button>
+    <button onclick="scrollToPayment()">Tham gia nhiệm vụ</button>
 </div>
 
 <div class="job">
@@ -112,7 +112,7 @@ footer{
         📌 Nội dung nhiệm vụ:<br>
         – Like 70 video TikTok
     </div>
-    <button>Tham gia nhiệm vụ</button>
+    <button onclick="scrollToPayment()">Tham gia nhiệm vụ</button>
 </div>
 
 <div class="job">
@@ -125,7 +125,7 @@ footer{
     </div>
 </div>
 
-<div class="job payment">
+<div class="job payment" id="payment">
     <h2>💳 Thanh Toán Nhiệm Vụ</h2>
     <img src="https://i.imgur.com/zO6u3LO.jpeg" alt="Thanh toán nhiệm vụ">
 </div>
@@ -135,5 +135,14 @@ footer{
 </footer>
 
 </div>
+
+<script>
+function scrollToPayment() {
+    document.getElementById("payment").scrollIntoView({
+        behavior: "smooth"
+    });
+}
+</script>
+
 </body>
 </html>
