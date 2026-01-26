@@ -1,218 +1,291 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-    <meta charset="UTF-8">
-    <title>VouCher Shoppe</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: #f5f6fa;
-            margin: 0;
-        }
+<meta charset="UTF-8">
+<title>Voucher Shopee | Uy Tín Hàng Đầu</title>
 
-        marquee {
-            background: #ff4757;
-            color: white;
-            padding: 10px;
-            font-weight: bold;
-            font-size: 16px;
-        }
+<style>
+:root{
+    --shopee:#ee4d2d;
+    --bg:#f5f5f5;
+}
 
-        .container {
-            max-width: 1100px;
-            margin: auto;
-            padding: 20px;
-        }
+body{
+    margin:0;
+    font-family: Arial, sans-serif;
+    background:var(--bg);
+}
 
-        h1, h2 {
-            text-align: center;
-            color: #2f3542;
-        }
+/* HEADER */
+header{
+    background:var(--shopee);
+    color:#fff;
+    padding:15px;
+}
 
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 15px;
-        }
+header h1{
+    margin:0;
+}
 
-        .card {
-            background: white;
-            padding: 15px;
-            border-radius: 10px;
-            text-align: center;
-            box-shadow: 0 0 12px rgba(0,0,0,0.1);
-        }
+.marquee{
+    background:#ff7337;
+    color:#fff;
+    padding:8px;
+    font-weight:bold;
+}
 
-        .card h3 {
-            color: #3742fa;
-        }
+/* LAYOUT */
+.container{
+    max-width:1200px;
+    margin:auto;
+    padding:20px;
+}
 
-        .card button {
-            background: #2ed573;
-            color: white;
-            border: none;
-            padding: 10px 15px;
-            border-radius: 6px;
-            cursor: pointer;
-            font-size: 15px;
-        }
+.section{
+    margin-bottom:40px;
+}
 
-        .card button:hover {
-            background: #1eae60;
-        }
+.section h2{
+    color:#222;
+    margin-bottom:15px;
+}
 
-        .reviews {
-            background: white;
-            padding: 15px;
-            border-radius: 10px;
-            margin-bottom: 10px;
-        }
+/* BADGE */
+.badges{
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+}
 
-        textarea {
-            width: 100%;
-            height: 80px;
-            padding: 10px;
-            border-radius: 6px;
-            border: 1px solid #ccc;
-        }
+.badge{
+    background:#fff;
+    padding:10px 15px;
+    border-radius:20px;
+    font-size:14px;
+    box-shadow:0 0 5px rgba(0,0,0,0.1);
+}
 
-        .popup {
-            display: none;
-            position: fixed;
-            inset: 0;
-            background: rgba(0,0,0,0.6);
-        }
+/* GRID */
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:20px;
+}
 
-        .popup-content {
-            background: white;
-            width: 320px;
-            padding: 20px;
-            margin: 120px auto;
-            border-radius: 10px;
-            position: relative;
-            text-align: center;
-        }
+/* VOUCHER CARD */
+.voucher{
+    background:#fff;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 4px 10px rgba(0,0,0,0.1);
+}
 
-        .close {
-            position: absolute;
-            right: 10px;
-            top: 5px;
-            font-size: 22px;
-            cursor: pointer;
-            color: red;
-        }
-    </style>
+.voucher img{
+    width:100%;
+    height:140px;
+    object-fit:cover;
+}
+
+.voucher-content{
+    padding:15px;
+}
+
+.price{
+    color:var(--shopee);
+    font-size:20px;
+    font-weight:bold;
+}
+
+.btn{
+    width:100%;
+    background:var(--shopee);
+    color:#fff;
+    border:none;
+    padding:10px;
+    border-radius:6px;
+    cursor:pointer;
+    margin-top:10px;
+}
+
+.btn:hover{
+    opacity:0.9;
+}
+
+/* REVIEW */
+.review{
+    background:#fff;
+    padding:15px;
+    border-radius:10px;
+    margin-bottom:10px;
+    display:flex;
+    gap:10px;
+}
+
+.avatar{
+    width:40px;
+    height:40px;
+    border-radius:50%;
+    background:#ccc;
+}
+
+/* POPUP */
+.popup{
+    display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,0.6);
+}
+
+.popup-box{
+    background:#fff;
+    width:320px;
+    margin:120px auto;
+    padding:20px;
+    border-radius:10px;
+    text-align:center;
+    position:relative;
+}
+
+.close{
+    position:absolute;
+    top:5px;
+    right:10px;
+    font-size:22px;
+    cursor:pointer;
+    color:red;
+}
+</style>
 </head>
+
 <body>
 
-<marquee>🔥 UY TÍN ĐẶT LÊN HÀNG ĐẦU – GIAO DỊCH NHANH – HỖ TRỢ 24/7 🔥</marquee>
+<header>
+    <h1>🛒 Voucher Shopee Uy Tín</h1>
+</header>
 
-<div class="container">
-    <h1>🎟️ VouCher Shoppe</h1>
-
-    <h2>🔥 Voucher Shopee</h2>
-    <div class="grid">
-        <div class="card">
-            <h3>Mã 1 – 20k</h3>
-            <p>Giảm: 80k</p>
-            <p>Đơn từ: 0đ</p>
-            <p>Còn lại: 67</p>
-            <button onclick="openPopup()">Mua ngay</button>
-        </div>
-
-        <div class="card">
-            <h3>Mã 2 – 50k</h3>
-            <p>Giảm: 170k</p>
-            <p>Đơn từ: 0đ</p>
-            <p>Còn lại: 24</p>
-            <button onclick="openPopup()">Mua ngay</button>
-        </div>
-
-        <div class="card">
-            <h3>Mã 3 – 210k</h3>
-            <p>Giảm: 420k</p>
-            <p>Đơn từ: 0đ</p>
-            <p>Còn lại: 13</p>
-            <button onclick="openPopup()">Mua ngay</button>
-        </div>
-
-        <div class="card">
-            <h3>Mã 4 – 250k</h3>
-            <p>Giảm: 700k</p>
-            <p>Đơn từ: 0đ</p>
-            <p>Còn lại: 34</p>
-            <button onclick="openPopup()">Mua ngay</button>
-        </div>
-
-        <div class="card">
-            <h3>Mã 5 – 320k</h3>
-            <p>Giảm: 666k</p>
-            <p>Đơn từ: 0đ</p>
-            <p>Còn lại: 8</p>
-            <button onclick="openPopup()">Mua ngay</button>
-        </div>
-    </div>
-
-    <h2>👑 Acc Shopee Rank Cao</h2>
-    <div class="grid">
-        <div class="card">
-            <h3>Acc 1</h3>
-            <p>Giá: 190k</p>
-            <p>Rank: Bạc</p>
-            <p>Follow: 2100–2200</p>
-            <button onclick="openPopup()">Mua ngay</button>
-        </div>
-
-        <div class="card">
-            <h3>Acc 2</h3>
-            <p>Giá: 260k</p>
-            <p>Rank: Bạc</p>
-            <p>Follow: 2900–3000</p>
-            <button onclick="openPopup()">Mua ngay</button>
-        </div>
-
-        <div class="card">
-            <h3>Acc 3</h3>
-            <p>Giá: 320k</p>
-            <p>Rank: Vàng</p>
-            <p>Follow: 4000–4100</p>
-            <button onclick="openPopup()">Mua ngay</button>
-        </div>
-    </div>
-
-    <h2>⭐ Đánh Giá Khách Hàng</h2>
-    <div class="reviews">
-        ⭐⭐⭐⭐⭐ Shop rất uy tín, nhận mã nhanh  
-        <br>⭐⭐⭐⭐⭐ Acc chuẩn, follow thật  
-        <br>⭐⭐⭐⭐⭐ Giao dịch ok, sẽ ủng hộ tiếp
-    </div>
-
-    <textarea placeholder="Nhập đánh giá của bạn..."></textarea>
-    <br><br>
-    <button>Gửi đánh giá</button>
+<div class="marquee">
+🔥 UY TÍN ĐẶT LÊN HÀNG ĐẦU – HƠN 5.000 GIAO DỊCH THÀNH CÔNG – ONLINE 24/7 🔥
 </div>
 
-<!-- POPUP THANH TOÁN -->
-<div id="popup" class="popup">
-    <div class="popup-content">
-        <span class="close" onclick="closePopup()">×</span>
-        <h2>💳 Thanh Toán</h2>
-        <p><b>MB Bank:</b> 0376805925</p>
-        <p><b>Tên:</b> Nguyễn Phi Hùng</p>
-        <hr>
-        <p>📸 Gửi bill xác nhận</p>
-        <p>Zalo: 0376805925</p>
-        <p>Telegram: Xod50</p>
+<div class="container">
+
+<!-- UY TÍN -->
+<div class="section">
+    <div class="badges">
+        <div class="badge">✅ Giao dịch nhanh</div>
+        <div class="badge">✅ Hoàn tiền nếu lỗi</div>
+        <div class="badge">✅ Hỗ trợ Zalo / Telegram</div>
+        <div class="badge">🔥 Giá rẻ nhất thị trường</div>
     </div>
+</div>
+
+<!-- VOUCHER -->
+<div class="section">
+<h2>🎟️ Voucher Shopee Hot</h2>
+<div class="grid">
+
+<div class="voucher">
+<img src="https://i.imgur.com/0Z8FQpS.png">
+<div class="voucher-content">
+<div class="price">20.000đ</div>
+<p>Giảm 80k – Đơn từ 0đ</p>
+<p>Còn lại: 67</p>
+<button class="btn" onclick="openPopup()">Mua ngay</button>
+</div>
+</div>
+
+<div class="voucher">
+<img src="https://i.imgur.com/7V0R6vT.png">
+<div class="voucher-content">
+<div class="price">50.000đ</div>
+<p>Giảm 170k – Đơn từ 0đ</p>
+<p>Còn lại: 24</p>
+<button class="btn" onclick="openPopup()">Mua ngay</button>
+</div>
+</div>
+
+<div class="voucher">
+<img src="https://i.imgur.com/2bX9K6y.png">
+<div class="voucher-content">
+<div class="price">210.000đ</div>
+<p>Giảm 420k – Đơn từ 0đ</p>
+<p>Còn lại: 13</p>
+<button class="btn" onclick="openPopup()">Mua ngay</button>
+</div>
+</div>
+
+</div>
+</div>
+
+<!-- ACC -->
+<div class="section">
+<h2>👑 Acc Shopee Rank Cao</h2>
+<div class="grid">
+
+<div class="voucher">
+<img src="https://i.imgur.com/1qQZ1Zm.png">
+<div class="voucher-content">
+<div class="price">190.000đ</div>
+<p>Rank Bạc – 2100 Follow</p>
+<button class="btn" onclick="openPopup()">Mua Acc</button>
+</div>
+</div>
+
+<div class="voucher">
+<img src="https://i.imgur.com/1qQZ1Zm.png">
+<div class="voucher-content">
+<div class="price">320.000đ</div>
+<p>Rank Vàng – 4000 Follow</p>
+<button class="btn" onclick="openPopup()">Mua Acc</button>
+</div>
+</div>
+
+</div>
+</div>
+
+<!-- REVIEW -->
+<div class="section">
+<h2>⭐ Đánh Giá Khách Hàng</h2>
+
+<div class="review">
+<div class="avatar"></div>
+<div>⭐⭐⭐⭐⭐ Mua mã nhận ngay, shop uy tín</div>
+</div>
+
+<div class="review">
+<div class="avatar"></div>
+<div>⭐⭐⭐⭐⭐ Acc đúng mô tả, follow thật</div>
+</div>
+
+<div class="review">
+<div class="avatar"></div>
+<div>⭐⭐⭐⭐⭐ Sẽ quay lại mua tiếp</div>
+</div>
+</div>
+
+</div>
+
+<!-- POPUP -->
+<div class="popup" id="popup">
+<div class="popup-box">
+<span class="close" onclick="closePopup()">×</span>
+<h2>💳 Thanh Toán</h2>
+<p><b>MB Bank:</b> 0376805925</p>
+<p><b>Nguyễn Phi Hùng</b></p>
+<hr>
+<p>📸 Gửi bill xác nhận</p>
+<p>Zalo: 0376805925</p>
+<p>Telegram: Xod50</p>
+</div>
 </div>
 
 <script>
-    function openPopup() {
-        document.getElementById("popup").style.display = "block";
-    }
-    function closePopup() {
-        document.getElementById("popup").style.display = "none";
-    }
+function openPopup(){
+    document.getElementById("popup").style.display="block";
+}
+function closePopup(){
+    document.getElementById("popup").style.display="none";
+}
 </script>
 
 </body>
