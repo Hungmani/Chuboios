@@ -2,67 +2,115 @@
 <html lang="vi">
 <head>
 <meta charset="UTF-8">
-<title>Mã Voucher Shopee</title>
+<title>Voucher Shopee Giá Rẻ</title>
 
 <style>
 * { box-sizing: border-box; }
 
 body {
     margin: 0;
-    font-family: 'Segoe UI', Tahoma, sans-serif;
-    background: #f4f4f4;
+    font-family: 'Segoe UI', sans-serif;
+    background: #f2f2f2;
+}
+
+/* TOP BAR */
+.topbar {
+    background: #ff5722;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    font-size: 15px;
 }
 
 /* HEADER */
 header {
     background: linear-gradient(135deg, #ff5722, #ff9800);
-    padding: 30px;
+    padding: 40px 20px;
     color: white;
     text-align: center;
 }
 
+header h1 {
+    margin: 0;
+    font-size: 36px;
+}
+
 /* CONTAINER */
 .container {
-    max-width: 1100px;
+    max-width: 1200px;
     margin: auto;
-    padding: 30px;
+    padding: 30px 15px;
 }
 
-/* VOUCHERS */
-.voucher-grid {
+/* GRID */
+.grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 20px;
+    gap: 25px;
 }
 
-.voucher {
+/* VOUCHER CARD */
+.card {
     background: white;
-    border-radius: 16px;
+    border-radius: 18px;
     padding: 22px;
-    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.12);
     transition: 0.3s;
+    position: relative;
 }
 
-.voucher:hover { transform: translateY(-6px); }
+.card:hover {
+    transform: translateY(-10px);
+}
 
-.voucher h2 { color: #ff5722; }
+.badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: #e91e63;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 13px;
+}
+
+.card h2 {
+    color: #ff5722;
+}
+
+.value {
+    font-size: 18px;
+    margin: 10px 0;
+}
 
 .price {
-    font-size: 22px;
+    font-size: 24px;
     font-weight: bold;
     color: #2e7d32;
 }
 
-.buy-btn {
-    display: block;
+.btn {
     margin-top: 15px;
     padding: 12px;
     background: linear-gradient(135deg, #ff5722, #ff9800);
     color: white;
     text-align: center;
-    border-radius: 10px;
+    border-radius: 12px;
     cursor: pointer;
     font-weight: bold;
+}
+
+/* INFO BOX */
+.info {
+    margin-top: 50px;
+    background: white;
+    border-radius: 18px;
+    padding: 25px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+}
+
+.info h3 {
+    color: #ff5722;
 }
 
 /* MODAL */
@@ -70,27 +118,27 @@ header {
     display: none;
     position: fixed;
     inset: 0;
-    background: rgba(0,0,0,0.6);
+    background: rgba(0,0,0,0.7);
     justify-content: center;
     align-items: center;
-    z-index: 1000;
+    z-index: 999;
 }
 
-.modal-content {
+.modal-box {
     background: white;
     width: 90%;
-    max-width: 450px;
-    border-radius: 16px;
+    max-width: 500px;
+    border-radius: 18px;
     padding: 25px;
-    animation: zoom 0.3s ease;
+    animation: pop 0.3s ease;
 }
 
-@keyframes zoom {
+@keyframes pop {
     from { transform: scale(0.7); opacity: 0; }
     to { transform: scale(1); opacity: 1; }
 }
 
-.modal-content h3 {
+.modal-box h3 {
     color: #ff5722;
     margin-top: 0;
 }
@@ -99,16 +147,16 @@ header {
     background: #f9f9f9;
     border-radius: 12px;
     padding: 15px;
+    line-height: 1.8;
     font-size: 17px;
-    line-height: 1.7;
 }
 
 .notice {
     margin-top: 15px;
     background: #fff8e1;
-    border-left: 5px solid #ff9800;
-    padding: 14px;
-    border-radius: 8px;
+    border-left: 6px solid #ff9800;
+    padding: 15px;
+    border-radius: 10px;
 }
 
 .zalo {
@@ -116,61 +164,99 @@ header {
     font-weight: bold;
 }
 
-.close-btn {
+.close {
     margin-top: 20px;
-    padding: 10px;
+    padding: 12px;
     width: 100%;
     background: #ff5722;
     color: white;
     border: none;
-    border-radius: 10px;
+    border-radius: 12px;
     font-size: 16px;
     cursor: pointer;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 25px;
+    color: #777;
+    font-size: 14px;
 }
 </style>
 </head>
 
 <body>
 
+<div class="topbar">
+🔥 Ưu đãi có hạn – Giao mã nhanh trong ngày – Hỗ trợ Zalo 24/7
+</div>
+
 <header>
-    <h1>MÃ VOUCHER SHOPEE</h1>
-    <p>Giao mã nhanh – Uy tín – Hỗ trợ Zalo</p>
+    <h1>VOUCHER SHOPEE GIÁ RẺ</h1>
+    <p>Mua 1 lần – Sử dụng lâu dài – Áp dụng đơn từ 0đ</p>
 </header>
 
 <div class="container">
-    <div class="voucher-grid">
 
-        <div class="voucher">
-            <h2>Mã 120k</h2>
-            <p>Nhận voucher 1.200.000đ</p>
-            <p>Áp dụng đơn từ 0đ</p>
-            <div class="price">120.000đ</div>
-            <div class="buy-btn" onclick="openModal()">Mua mã</div>
-        </div>
-
-        <div class="voucher">
-            <h2>Mã 200k</h2>
-            <p>Nhận voucher 2.700.000đ</p>
-            <p>Áp dụng đơn từ 0đ</p>
-            <div class="price">200.000đ</div>
-            <div class="buy-btn" onclick="openModal()">Mua mã</div>
-        </div>
-
-        <div class="voucher">
-            <h2>Mã 400k</h2>
-            <p>Nhận voucher 4.800.000đ</p>
-            <p>Áp dụng đơn từ 0đ</p>
-            <div class="price">400.000đ</div>
-            <div class="buy-btn" onclick="openModal()">Mua mã</div>
-        </div>
-
+<div class="grid">
+    <div class="card">
+        <div class="badge">HOT</div>
+        <h2>Mã 120K</h2>
+        <div class="value">Nhận voucher 1.200.000đ</div>
+        <div class="price">120.000đ</div>
+        <div class="btn" onclick="openModal('Mã 120K', '120.000đ', '1.200.000đ')">Mua mã</div>
     </div>
+
+    <div class="card">
+        <div class="badge">BÁN CHẠY</div>
+        <h2>Mã 200K</h2>
+        <div class="value">Nhận voucher 2.700.000đ</div>
+        <div class="price">200.000đ</div>
+        <div class="btn" onclick="openModal('Mã 200K', '200.000đ', '2.700.000đ')">Mua mã</div>
+    </div>
+
+    <div class="card">
+        <div class="badge">VIP</div>
+        <h2>Mã 400K</h2>
+        <div class="value">Nhận voucher 4.800.000đ</div>
+        <div class="price">400.000đ</div>
+        <div class="btn" onclick="openModal('Mã 400K', '400.000đ', '4.800.000đ')">Mua mã</div>
+    </div>
+
+    <div class="card">
+        <div class="badge">VIP</div>
+        <h2>Mã 600K</h2>
+        <div class="value">Nhận voucher 6.500.000đ</div>
+        <div class="price">600.000đ</div>
+        <div class="btn" onclick="openModal('Mã 600K', '600.000đ', '6.500.000đ')">Mua mã</div>
+    </div>
+
+    <div class="card">
+        <div class="badge">SIÊU VIP</div>
+        <h2>Mã 800K</h2>
+        <div class="value">Nhận voucher 9.000.000đ</div>
+        <div class="price">800.000đ</div>
+        <div class="btn" onclick="openModal('Mã 800K', '800.000đ', '9.000.000đ')">Mua mã</div>
+    </div>
+</div>
+
+<div class="info">
+    <h3>📌 CAM KẾT & LƯU Ý</h3>
+    ✔ Voucher dùng thật – không hoàn tiền<br>
+    ✔ Giao mã sau khi xác nhận bill<br>
+    ✔ Mỗi bill nhận 1 mã<br>
+    ✔ Có thể hết mã vào giờ cao điểm
+</div>
+
 </div>
 
 <!-- MODAL -->
 <div class="modal" id="modal">
-    <div class="modal-content">
-        <h3>HÃY THANH TOÁN</h3>
+    <div class="modal-box">
+        <h3 id="modalTitle"></h3>
+        <p><strong>Giá mua:</strong> <span id="modalPrice"></span></p>
+        <p><strong>Giá trị nhận:</strong> <span id="modalValue"></span></p>
 
         <div class="bank">
             🏦 MB Bank<br>
@@ -185,12 +271,19 @@ header {
             • Admin xác nhận và gửi mã
         </div>
 
-        <button class="close-btn" onclick="closeModal()">Đã hiểu</button>
+        <button class="close" onclick="closeModal()">Đã hiểu</button>
     </div>
 </div>
 
+<footer>
+© 2026 Voucher Shopee | Giao mã thủ công qua Zalo
+</footer>
+
 <script>
-function openModal() {
+function openModal(title, price, value) {
+    document.getElementById("modalTitle").innerText = title;
+    document.getElementById("modalPrice").innerText = price;
+    document.getElementById("modalValue").innerText = value;
     document.getElementById("modal").style.display = "flex";
 }
 function closeModal() {
