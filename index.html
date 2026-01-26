@@ -49,7 +49,7 @@ header h1 {
     gap: 25px;
 }
 
-/* VOUCHER CARD */
+/* CARD */
 .card {
     background: white;
     border-radius: 18px;
@@ -130,24 +130,16 @@ header h1 {
     max-width: 500px;
     border-radius: 18px;
     padding: 25px;
-    animation: pop 0.3s ease;
-}
-
-@keyframes pop {
-    from { transform: scale(0.7); opacity: 0; }
-    to { transform: scale(1); opacity: 1; }
 }
 
 .modal-box h3 {
     color: #ff5722;
-    margin-top: 0;
 }
 
 .bank {
     background: #f9f9f9;
     border-radius: 12px;
     padding: 15px;
-    line-height: 1.8;
     font-size: 17px;
 }
 
@@ -176,12 +168,10 @@ header h1 {
     cursor: pointer;
 }
 
-/* FOOTER */
 footer {
     text-align: center;
     padding: 25px;
     color: #777;
-    font-size: 14px;
 }
 </style>
 </head>
@@ -198,14 +188,15 @@ footer {
 </header>
 
 <div class="container">
-
 <div class="grid">
+
+    <!-- VOUCHER CŨ -->
     <div class="card">
         <div class="badge">HOT</div>
         <h2>Mã 120K</h2>
         <div class="value">Nhận voucher 1.200.000đ</div>
         <div class="price">120.000đ</div>
-        <div class="btn" onclick="openModal('Mã 120K', '120.000đ', '1.200.000đ')">Mua mã</div>
+        <div class="btn" onclick="openModal('Mã 120K','120.000đ','1.200.000đ')">Mua mã</div>
     </div>
 
     <div class="card">
@@ -213,7 +204,7 @@ footer {
         <h2>Mã 200K</h2>
         <div class="value">Nhận voucher 2.700.000đ</div>
         <div class="price">200.000đ</div>
-        <div class="btn" onclick="openModal('Mã 200K', '200.000đ', '2.700.000đ')">Mua mã</div>
+        <div class="btn" onclick="openModal('Mã 200K','200.000đ','2.700.000đ')">Mua mã</div>
     </div>
 
     <div class="card">
@@ -221,7 +212,7 @@ footer {
         <h2>Mã 400K</h2>
         <div class="value">Nhận voucher 4.800.000đ</div>
         <div class="price">400.000đ</div>
-        <div class="btn" onclick="openModal('Mã 400K', '400.000đ', '4.800.000đ')">Mua mã</div>
+        <div class="btn" onclick="openModal('Mã 400K','400.000đ','4.800.000đ')">Mua mã</div>
     </div>
 
     <div class="card">
@@ -229,7 +220,7 @@ footer {
         <h2>Mã 600K</h2>
         <div class="value">Nhận voucher 6.500.000đ</div>
         <div class="price">600.000đ</div>
-        <div class="btn" onclick="openModal('Mã 600K', '600.000đ', '6.500.000đ')">Mua mã</div>
+        <div class="btn" onclick="openModal('Mã 600K','600.000đ','6.500.000đ')">Mua mã</div>
     </div>
 
     <div class="card">
@@ -237,8 +228,35 @@ footer {
         <h2>Mã 800K</h2>
         <div class="value">Nhận voucher 9.000.000đ</div>
         <div class="price">800.000đ</div>
-        <div class="btn" onclick="openModal('Mã 800K', '800.000đ', '9.000.000đ')">Mua mã</div>
+        <div class="btn" onclick="openModal('Mã 800K','800.000đ','9.000.000đ')">Mua mã</div>
     </div>
+
+    <!-- MÃ NGƯỜI MỚI -->
+    <div class="card">
+        <div class="badge">NEW</div>
+        <h2>Mã Người Mới</h2>
+        <div class="value">Nhận voucher 80.000đ</div>
+        <div class="price">20.000đ</div>
+        <div class="btn" onclick="openModal('Mã Người Mới','20.000đ','80.000đ')">Mua mã</div>
+    </div>
+
+    <!-- SHOPEE TIẾP THỊ -->
+    <div class="card">
+        <div class="badge">HOT</div>
+        <h2>TK Shopee Tiếp Thị</h2>
+        <div class="value">Tài khoản 2.000 Follow</div>
+        <div class="price">170.000đ</div>
+        <div class="btn" onclick="openModal('TK Shopee Tiếp Thị 2.000 Follow','170.000đ','Tài khoản 2.000 Follow')">Mua ngay</div>
+    </div>
+
+    <div class="card">
+        <div class="badge">BÁN CHẠY</div>
+        <h2>TK Shopee Tiếp Thị</h2>
+        <div class="value">Tài khoản 1.500 Follow</div>
+        <div class="price">130.000đ</div>
+        <div class="btn" onclick="openModal('TK Shopee Tiếp Thị 1.500 Follow','130.000đ','Tài khoản 1.500 Follow')">Mua ngay</div>
+    </div>
+
 </div>
 
 <div class="info">
@@ -248,7 +266,6 @@ footer {
     ✔ Mỗi bill nhận 1 mã<br>
     ✔ Có thể hết mã vào giờ cao điểm
 </div>
-
 </div>
 
 <!-- MODAL -->
@@ -265,10 +282,7 @@ footer {
         </div>
 
         <div class="notice">
-            📸 Sau khi thanh toán:<br>
-            • Chụp bill chuyển khoản<br>
-            • Gửi Zalo: <span class="zalo">0376805925</span><br>
-            • Admin xác nhận và gửi mã
+            📸 Chụp bill chuyển khoản & gửi Zalo: <span class="zalo">0376805925</span>
         </div>
 
         <button class="close" onclick="closeModal()">Đã hiểu</button>
@@ -281,13 +295,13 @@ footer {
 
 <script>
 function openModal(title, price, value) {
-    document.getElementById("modalTitle").innerText = title;
-    document.getElementById("modalPrice").innerText = price;
-    document.getElementById("modalValue").innerText = value;
-    document.getElementById("modal").style.display = "flex";
+    modalTitle.innerText = title;
+    modalPrice.innerText = price;
+    modalValue.innerText = value;
+    modal.style.display = "flex";
 }
 function closeModal() {
-    document.getElementById("modal").style.display = "none";
+    modal.style.display = "none";
 }
 </script>
 
