@@ -1,114 +1,105 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-<meta charset="UTF-8">
-<title>Mã Voucher Shopee</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>Mã Voucher Shopee</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #ff6a00, #ffb347);
+            margin: 0;
+            padding: 0;
+        }
 
-<style>
-    body {
-        font-family: Arial, sans-serif;
-        background: linear-gradient(135deg, #ff5722, #ff9800);
-        margin: 0;
-        padding: 20px;
-        color: #333;
-    }
+        h1 {
+            text-align: center;
+            color: white;
+            padding: 20px;
+        }
 
-    h1 {
-        text-align: center;
-        color: #fff;
-        margin-bottom: 30px;
-        animation: fadeIn 1.5s ease;
-    }
+        .container {
+            max-width: 900px;
+            margin: auto;
+            padding: 20px;
+        }
 
-    .container {
-        max-width: 800px;
-        margin: auto;
-    }
+        .voucher {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            animation: fadeIn 0.8s ease;
+        }
 
-    .voucher {
-        background: #fff;
-        border-radius: 10px;
-        padding: 20px;
-        margin-bottom: 20px;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-        animation: slideUp 1s ease;
-    }
+        .voucher h2 {
+            color: #ff6a00;
+        }
 
-    .voucher h2 {
-        color: #ff5722;
-        margin: 0 0 10px;
-    }
+        .buy-btn {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 20px;
+            background: #ff6a00;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: 0.3s;
+        }
 
-    .voucher p {
-        margin: 5px 0;
-    }
+        .buy-btn:hover {
+            background: #e65c00;
+            transform: scale(1.05);
+        }
 
-    .buy-btn {
-        margin-top: 10px;
-        padding: 10px 20px;
-        background: #ff5722;
-        color: #fff;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        font-size: 16px;
-    }
+        #payment {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            margin-top: 40px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+        }
 
-    .buy-btn:hover {
-        background: #e64a19;
-    }
+        .notice {
+            background: #fff3cd;
+            border-left: 6px solid #ff9800;
+            padding: 15px;
+            margin-top: 20px;
+            border-radius: 8px;
+            font-size: 18px;
+        }
 
-    .payment {
-        background: #fff;
-        border-radius: 10px;
-        padding: 20px;
-        margin-top: 40px;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-    }
+        .zalo {
+            color: #0068ff;
+            font-weight: bold;
+            font-size: 20px;
+        }
 
-    .payment h2 {
-        color: #ff5722;
-    }
+        .confirm-btn {
+            margin-top: 20px;
+            padding: 12px 25px;
+            background: green;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+        }
 
-    .pay-btn {
-        margin-top: 15px;
-        padding: 12px 25px;
-        background: green;
-        color: #fff;
-        border: none;
-        border-radius: 5px;
-        font-size: 16px;
-        cursor: pointer;
-    }
+        #result {
+            margin-top: 20px;
+            font-size: 20px;
+            color: red;
+            font-weight: bold;
+            display: none;
+        }
 
-    .pay-btn:hover {
-        background: darkgreen;
-    }
-
-    .code-box {
-        display: none;
-        margin-top: 20px;
-        padding: 15px;
-        background: #f1f1f1;
-        border-radius: 5px;
-        font-weight: bold;
-        color: #d32f2f;
-        text-align: center;
-    }
-
-    @keyframes fadeIn {
-        from {opacity: 0;}
-        to {opacity: 1;}
-    }
-
-    @keyframes slideUp {
-        from {transform: translateY(30px); opacity: 0;}
-        to {transform: translateY(0); opacity: 1;}
-    }
-</style>
+        @keyframes fadeIn {
+            from {opacity: 0; transform: translateY(20px);}
+            to {opacity: 1; transform: translateY(0);}
+        }
+    </style>
 </head>
-
 <body>
 
 <h1>MÃ VOUCHER SHOPEE</h1>
@@ -116,11 +107,79 @@
 <div class="container">
 
     <div class="voucher">
-        <h2>Mã 1: 120K</h2>
-        <p>Nhận Voucher: <b>1.200.000đ</b></p>
-        <p>Áp dụng cho đơn hàng từ <b>0đ</b></p>
-        <button class="buy-btn" onclick="scrollToPay()">Mua mã</button>
+        <h2>Mã 1: 120k</h2>
+        <p>Nhận Voucher 1.200.000đ</p>
+        <p>Áp dụng cho đơn hàng từ 0đ</p>
+        <a href="#payment" class="buy-btn">Mua mã</a>
     </div>
 
     <div class="voucher">
-        <h2
+        <h2>Mã 2: 200k</h2>
+        <p>Nhận Voucher 2.700.000đ</p>
+        <p>Áp dụng cho đơn từ 0đ</p>
+        <a href="#payment" class="buy-btn">Mua mã</a>
+    </div>
+
+    <div class="voucher">
+        <h2>Mã 3: 400k</h2>
+        <p>Nhận Voucher 4.800.000đ</p>
+        <p>Áp dụng cho đơn từ 0đ</p>
+        <a href="#payment" class="buy-btn">Mua mã</a>
+    </div>
+
+    <div class="voucher">
+        <h2>Mã 4: 600k</h2>
+        <p>Nhận Voucher 6.500.000đ</p>
+        <p>Áp dụng cho đơn từ 0đ</p>
+        <a href="#payment" class="buy-btn">Mua mã</a>
+    </div>
+
+    <div class="voucher">
+        <h2>Mã 5: 800k</h2>
+        <p>Nhận Voucher 9.000.000đ</p>
+        <p>Áp dụng cho đơn từ 0đ</p>
+        <a href="#payment" class="buy-btn">Mua mã</a>
+    </div>
+
+    <!-- Thanh toán -->
+    <div id="payment">
+        <h2>THANH TOÁN</h2>
+        <p><strong>Ngân hàng:</strong> MB Bank</p>
+        <p><strong>Số tài khoản:</strong> 0376805925</p>
+        <p><strong>Chủ tài khoản:</strong> Nguyễn Phi Hùng</p>
+
+        <div class="notice">
+            📸 <strong>Sau khi thanh toán:</strong><br>
+            👉 Chụp ảnh bill chuyển khoản<br>
+            👉 Gửi qua <span class="zalo">Zalo: 0376805925</span><br>
+            👉 Admin xác nhận và gửi mã cho bạn
+        </div>
+
+        <!-- Demo hiển thị mã -->
+        <button class="confirm-btn" onclick="showCode()">Đã gửi bill (Demo)</button>
+
+        <div id="result">
+            🎉 MÃ VOUCHER CỦA BẠN: <br>
+            <span id="voucherCode"></span>
+        </div>
+    </div>
+
+</div>
+
+<script>
+    function showCode() {
+        const codes = [
+            "SP-2026-AB12",
+            "SHOPEE-VIP-99",
+            "KM-FREE-888",
+            "SALE-XX77-PL",
+            "SP-MAX-2026"
+        ];
+        document.getElementById("voucherCode").innerText =
+            codes[Math.floor(Math.random() * codes.length)];
+        document.getElementById("result").style.display = "block";
+    }
+</script>
+
+</body>
+</html>
