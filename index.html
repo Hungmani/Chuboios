@@ -6,7 +6,6 @@
 
 <style>
 * { box-sizing: border-box; }
-
 body {
     margin: 0;
     font-family: 'Segoe UI', sans-serif;
@@ -19,7 +18,6 @@ body {
     color: white;
     text-align: center;
     padding: 10px;
-    font-size: 15px;
 }
 
 /* HEADER */
@@ -28,11 +26,6 @@ header {
     padding: 40px 20px;
     color: white;
     text-align: center;
-}
-
-header h1 {
-    margin: 0;
-    font-size: 36px;
 }
 
 /* CONTAINER */
@@ -54,11 +47,7 @@ header h1 {
     gap: 20px;
     text-align: center;
 }
-
-.trust strong {
-    font-size: 22px;
-    color: #ff5722;
-}
+.trust strong { font-size: 22px; color: #ff5722; }
 
 /* GRID */
 .grid {
@@ -76,10 +65,7 @@ header h1 {
     transition: 0.3s;
     position: relative;
 }
-
-.card:hover {
-    transform: translateY(-10px);
-}
+.card:hover { transform: translateY(-10px); }
 
 .badge {
     position: absolute;
@@ -93,14 +79,8 @@ header h1 {
 }
 
 .card h2 { color: #ff5722; }
-
 .value { font-size: 18px; margin: 10px 0; }
-
-.price {
-    font-size: 24px;
-    font-weight: bold;
-    color: #2e7d32;
-}
+.price { font-size: 24px; font-weight: bold; color: #2e7d32; }
 
 .btn {
     margin-top: 15px;
@@ -113,31 +93,19 @@ header h1 {
     font-weight: bold;
 }
 
-/* INFO */
-.info {
-    margin-top: 50px;
-    background: white;
-    border-radius: 18px;
-    padding: 25px;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
-}
-
 /* REVIEW */
-.review {
+.review, .info {
     margin-top: 50px;
     background: white;
     border-radius: 18px;
     padding: 30px;
     box-shadow: 0 15px 35px rgba(0,0,0,0.1);
 }
-
 .review-item {
     border-bottom: 1px dashed #ddd;
     padding: 15px 0;
 }
-
 .review-item:last-child { border-bottom: none; }
-
 .stars { color: #ffc107; }
 
 /* MODAL */
@@ -150,7 +118,6 @@ header h1 {
     align-items: center;
     z-index: 999;
 }
-
 .modal-box {
     background: white;
     width: 90%;
@@ -158,13 +125,11 @@ header h1 {
     border-radius: 18px;
     padding: 25px;
 }
-
 .bank {
     background: #f9f9f9;
     border-radius: 12px;
     padding: 15px;
 }
-
 .notice {
     margin-top: 15px;
     background: #fff8e1;
@@ -172,9 +137,7 @@ header h1 {
     padding: 15px;
     border-radius: 10px;
 }
-
 .zalo { color: #0068ff; font-weight: bold; }
-
 .close {
     margin-top: 20px;
     padding: 12px;
@@ -186,19 +149,13 @@ header h1 {
     font-size: 16px;
     cursor: pointer;
 }
-
-footer {
-    text-align: center;
-    padding: 25px;
-    color: #777;
-}
 </style>
 </head>
 
 <body>
 
 <div class="topbar">
-🔥 Ưu đãi có hạn – Giao mã nhanh trong ngày – Hỗ trợ Zalo 24/7
+🔥 Ưu đãi có hạn – Giao mã nhanh – Hỗ trợ Zalo 24/7
 </div>
 
 <header>
@@ -207,89 +164,97 @@ footer {
 </header>
 
 <div class="container">
-    <div class="trust">
-        <div><strong>3.200+</strong><br>Đơn đã bán</div>
-        <div><strong>97%</strong><br>Khách quay lại</div>
-        <div><strong>Từ 2023</strong><br>Hoạt động</div>
-        <div><strong>24/7</strong><br>Zalo hỗ trợ</div>
+
+<div class="trust">
+    <div><strong>3.200+</strong><br>Đơn đã bán</div>
+    <div><strong>97%</strong><br>Khách quay lại</div>
+    <div><strong>Từ 2023</strong><br>Hoạt động</div>
+    <div><strong>24/7</strong><br>Zalo hỗ trợ</div>
+</div>
+
+<div class="grid">
+    <div class="card">
+        <div class="badge">HOT</div>
+        <h2>Mã 120K</h2>
+        <div class="value">Nhận 1.200.000đ</div>
+        <div class="price">120.000đ</div>
+        <div class="btn" onclick="openModal('Mã 120K','120.000đ','1.200.000đ')">Mua mã</div>
     </div>
 
-    <div class="grid">
-
-        <!-- Voucher -->
-        <div class="card">
-            <div class="badge">HOT</div>
-            <h2>Mã 120K</h2>
-            <div class="value">Nhận voucher 1.200.000đ</div>
-            <div class="price">120.000đ</div>
-            <div class="btn" onclick="openModal('Mã 120K','120.000đ','1.200.000đ')">Mua mã</div>
-        </div>
-
-        <div class="card">
-            <div class="badge">NEW</div>
-            <h2>Mã Người Mới</h2>
-            <div class="value">Nhận voucher 80.000đ</div>
-            <div class="price">20.000đ</div>
-            <div class="btn" onclick="openModal('Mã Người Mới','20.000đ','80.000đ')">Mua mã</div>
-        </div>
-
-        <div class="card">
-            <div class="badge">HOT</div>
-            <h2>TK Shopee Tiếp Thị</h2>
-            <div class="value">2.000 Follow</div>
-            <div class="price">170.000đ</div>
-            <div class="btn" onclick="openModal('TK Shopee 2.000 Follow','170.000đ','2.000 Follow')">Mua ngay</div>
-        </div>
-
-        <div class="card">
-            <div class="badge">BÁN CHẠY</div>
-            <h2>TK Shopee Tiếp Thị</h2>
-            <div class="value">1.500 Follow</div>
-            <div class="price">130.000đ</div>
-            <div class="btn" onclick="openModal('TK Shopee 1.500 Follow','130.000đ','1.500 Follow')">Mua ngay</div>
-        </div>
-
+    <div class="card">
+        <div class="badge">NEW</div>
+        <h2>Mã Người Mới</h2>
+        <div class="value">Nhận 80.000đ</div>
+        <div class="price">20.000đ</div>
+        <div class="btn" onclick="openModal('Mã Người Mới','20.000đ','80.000đ')">Mua mã</div>
     </div>
+</div>
 
-    <div class="review">
-        <h3 style="color:#ff5722">⭐ ĐÁNH GIÁ KHÁCH HÀNG</h3>
-        <div class="review-item">
-            <div class="stars">★★★★★</div>
-            Nguyễn Minh T. – Giao mã rất nhanh
-        </div>
-        <div class="review-item">
-            <div class="stars">★★★★★</div>
-            Lê Hoàng A. – Mua nhiều lần đều ok
-        </div>
-        <div class="review-item">
-            <div class="stars">★★★★★</div>
-            Phạm Thúy N. – TK tiếp thị dùng ổn
-        </div>
-    </div>
+<div class="review">
+<h3 style="color:#ff5722">⭐ ĐÁNH GIÁ KHÁCH HÀNG</h3>
 
-    <div class="info">
-        ✔ Giao đúng – hoàn tiền nếu lỗi<br>
-        ✔ Không bán trùng mã<br>
-        ✔ Xác nhận bill rõ ràng
-    </div>
+<div class="review-item">
+    <div class="stars">★★★★★</div>
+    Nguyễn Minh T. – Giao mã rất nhanh
+</div>
+
+<h3 style="margin-top:30px;color:#ff5722">✍️ VIẾT ĐÁNH GIÁ</h3>
+
+<input id="reviewName" placeholder="Tên của bạn"
+style="width:100%;padding:12px;border-radius:10px;border:1px solid #ddd;margin-bottom:10px">
+
+<textarea id="reviewContent" placeholder="Nội dung đánh giá..."
+style="width:100%;padding:12px;border-radius:10px;border:1px solid #ddd;height:80px"></textarea>
+
+<div class="btn" onclick="addReview()">Gửi đánh giá</div>
+</div>
+
 </div>
 
 <!-- MODAL -->
 <div class="modal" id="modal">
-    <div class="modal-box">
-        <h3 id="modalTitle"></h3>
-        <p><b>Giá mua:</b> <span id="modalPrice"></span></p>
-        <p><b>Giá trị nhận:</b> <span id="modalValue"></span></p>
+<div class="modal-box">
+<h3 id="modalTitle" style="color:#ff5722"></h3>
 
-        <div class="bank">
-            🏦 MB Bank<br>
-            💳 0376805925<br>
-            👤 Nguyễn Phi Hùng
-        </div>
+<p><b>💰 Thanh toán:</b> <span id="modalPrice"></span></p>
+<p><b>🎁 Nhận:</b> <span id="modalValue"></span></p>
 
-        <div class="notice">
-            📸 Chụp bill & gửi Zalo <span class="zalo">0376805925</span>
-        </div>
+<div class="bank">
+🏦 <b>MB Bank</b><br>
+💳 <b>0376805925</b><br>
+👤 Nguyễn Phi Hùng
+</div>
 
-        <button class="close" onclick="closeModal()">Đã hiểu</button>
-    </d
+<div class="notice">
+📸 Gửi bill qua Zalo: <span class="zalo">0376805925</span>
+</div>
+
+<button class="close" onclick="closeModal()">Đã hiểu</button>
+</div>
+</div>
+
+<script>
+function openModal(title, price, value) {
+    modal.style.display = "flex";
+    modalTitle.innerText = title;
+    modalPrice.innerText = price;
+    modalValue.innerText = value;
+}
+function closeModal() {
+    modal.style.display = "none";
+}
+function addReview() {
+    if (!reviewName.value || !reviewContent.value) {
+        alert("Vui lòng nhập đầy đủ!");
+        return;
+    }
+    const div = document.createElement("div");
+    div.className = "review-item";
+    div.innerHTML = `<div class="stars">★★★★★</div>${reviewName.value} – ${reviewContent.value}`;
+    document.querySelector(".review").appendChild(div);
+    reviewName.value = reviewContent.value = "";
+}
+</script>
+
+</body>
+</html>
