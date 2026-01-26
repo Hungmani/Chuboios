@@ -4,34 +4,62 @@
 <meta charset="UTF-8">
 <title>Voucher & Acc Shopee Uy Tín</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <style>
 :root{--shopee:#ee4d2d;--bg:#f5f5f5}
 body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--bg);font-size:18px}
+
 header{background:var(--shopee);color:#fff;padding:24px;display:flex;gap:16px;align-items:center}
 .logo{width:56px;height:56px;background:#fff;color:var(--shopee);border-radius:16px;display:flex;align-items:center;justify-content:center;font-weight:bold;font-size:28px}
+
 .marquee{background:#ff7337;color:#fff;padding:14px;font-weight:bold;white-space:nowrap;overflow:hidden}
 .marquee span{display:inline-block;padding-left:100%;animation:run 15s linear infinite}
 @keyframes run{100%{transform:translateX(-100%)}}
+
 .container{max-width:1450px;margin:auto;padding:35px 25px}
 .section{margin-bottom:70px}
-h1{font-size:32px} h2{font-size:28px;margin-bottom:30px}
+h1{font-size:32px}
+h2{font-size:28px;margin-bottom:30px}
+
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(330px,1fr));gap:35px}
 .card{background:#fff;border-radius:20px;padding:30px;box-shadow:0 10px 25px rgba(0,0,0,.12);position:relative}
+
 .tag{position:absolute;top:16px;right:16px;background:var(--shopee);color:#fff;padding:6px 16px;border-radius:30px;font-size:14px}
 .price{color:var(--shopee);font-size:32px;font-weight:bold}
+
 .btn{width:100%;background:var(--shopee);color:#fff;border:none;padding:20px;border-radius:14px;font-size:20px;cursor:pointer;margin-top:22px}
 .btn[disabled]{background:#ccc}
+
 .review{background:#fff;padding:18px;border-radius:14px;margin-bottom:12px;box-shadow:0 4px 10px rgba(0,0,0,.1)}
 form input,form select{width:100%;padding:14px;margin-bottom:12px;border-radius:8px;border:1px solid #ccc}
+
+/* POPUP */
 .popup{display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:10}
-.popup-box{background:#fff;width:440px;margin:90px auto;padding:30px;border-radius:20px;text-align:center;position:relative}
-.close{position:absolute;top:10px;right:14px;font-size:26px;cursor:pointer;color:red}
+.popup-box{
+  background:#fff;
+  width:320px;
+  margin:15vh auto;
+  padding:22px;
+  border-radius:16px;
+  text-align:center;
+  position:relative;
+  font-size:16px;
+}
+.close{position:absolute;top:8px;right:12px;font-size:22px;cursor:pointer;color:red}
+
 footer{background:#fff;padding:30px;font-size:16px;color:#555;line-height:1.8}
-@media(max-width:768px){body{font-size:17px}.container{padding:25px}.price{font-size:28px}.btn{font-size:18px}}
+
+@media(max-width:768px){
+ body{font-size:17px}
+ .container{padding:25px}
+ .price{font-size:28px}
+ .btn{font-size:18px}
+}
 </style>
 </head>
 
 <body>
+
 <header>
   <div class="logo">S</div>
   <h1>Voucher & Acc Shopee Uy Tín</h1>
@@ -43,7 +71,7 @@ footer{background:#fff;padding:30px;font-size:16px;color:#555;line-height:1.8}
 
 <div class="container">
 
-<!-- FREE COUNTDOWN -->
+<!-- FREE -->
 <div class="section">
   <h2>🎁 Voucher FREE 99K (00:00 mỗi ngày)</h2>
   <div class="card">
@@ -53,15 +81,15 @@ footer{background:#fff;padding:30px;font-size:16px;color:#555;line-height:1.8}
   </div>
 </div>
 
-<!-- VOUCHERS -->
+<!-- VOUCHER -->
 <div class="section">
 <h2>🎟️ Voucher Shopee</h2>
 <div class="grid">
-  <div class="card"><div class="tag">HOT</div><div class="price">20.000đ</div><p>Giảm 80k – Đơn từ 0đ</p><p>Còn lại: <b id="v1"></b></p><button class="btn" onclick="buy('v1')">Mua ngay</button></div>
-  <div class="card"><div class="tag">SALE</div><div class="price">50.000đ</div><p>Giảm 170k – Đơn từ 0đ</p><p>Còn lại: <b id="v2"></b></p><button class="btn" onclick="buy('v2')">Mua ngay</button></div>
-  <div class="card"><div class="tag">VIP</div><div class="price">210.000đ</div><p>Giảm 420k – Đơn từ 0đ</p><p>Còn lại: <b id="v3"></b></p><button class="btn" onclick="buy('v3')">Mua ngay</button></div>
-  <div class="card"><div class="tag">SIÊU SALE</div><div class="price">250.000đ</div><p>Giảm 700k – Đơn từ 0đ</p><p>Còn lại: <b id="v4"></b></p><button class="btn" onclick="buy('v4')">Mua ngay</button></div>
-  <div class="card"><div class="tag">LIMITED</div><div class="price">320.000đ</div><p>Giảm 666k – Đơn từ 0đ</p><p>Còn lại: <b id="v5"></b></p><button class="btn" onclick="buy('v5')">Mua ngay</button></div>
+  <div class="card"><div class="tag">HOT</div><div class="price">20.000đ</div><p>Giảm 80k – Đơn từ 0đ</p><p>Còn: <b id="v1"></b></p><button class="btn" onclick="buy('v1')">Mua ngay</button></div>
+  <div class="card"><div class="tag">SALE</div><div class="price">50.000đ</div><p>Giảm 170k – Đơn từ 0đ</p><p>Còn: <b id="v2"></b></p><button class="btn" onclick="buy('v2')">Mua ngay</button></div>
+  <div class="card"><div class="tag">VIP</div><div class="price">210.000đ</div><p>Giảm 420k – Đơn từ 0đ</p><p>Còn: <b id="v3"></b></p><button class="btn" onclick="buy('v3')">Mua ngay</button></div>
+  <div class="card"><div class="tag">SIÊU SALE</div><div class="price">250.000đ</div><p>Giảm 700k – Đơn từ 0đ</p><p>Còn: <b id="v4"></b></p><button class="btn" onclick="buy('v4')">Mua ngay</button></div>
+  <div class="card"><div class="tag">LIMITED</div><div class="price">320.000đ</div><p>Giảm 666k – Đơn từ 0đ</p><p>Còn: <b id="v5"></b></p><button class="btn" onclick="buy('v5')">Mua ngay</button></div>
 </div>
 </div>
 
@@ -69,61 +97,48 @@ footer{background:#fff;padding:30px;font-size:16px;color:#555;line-height:1.8}
 <div class="section">
 <h2>👑 Acc Shopee Rank Cao</h2>
 <div class="grid">
-  <div class="card"><div class="tag">BẠC</div><div class="price">190.000đ</div><p>Rank Bạc – 2100–2200 Follow</p><p>Còn lại: <b id="a1"></b></p><button class="btn" onclick="buy('a1')">Mua Acc</button></div>
-  <div class="card"><div class="tag">BẠC+</div><div class="price">260.000đ</div><p>Rank Bạc – 2900–3000 Follow</p><p>Còn lại: <b id="a2"></b></p><button class="btn" onclick="buy('a2')">Mua Acc</button></div>
-  <div class="card"><div class="tag">VÀNG</div><div class="price">320.000đ</div><p>Rank Vàng – 4000–4100 Follow</p><p>Còn lại: <b id="a3"></b></p><button class="btn" onclick="buy('a3')">Mua Acc</button></div>
+  <div class="card"><div class="tag">BẠC</div><div class="price">190.000đ</div><p>2100–2200 Follow</p><p>Còn: <b id="a1"></b></p><button class="btn" onclick="buy('a1')">Mua Acc</button></div>
+  <div class="card"><div class="tag">BẠC+</div><div class="price">260.000đ</div><p>2900–3000 Follow</p><p>Còn: <b id="a2"></b></p><button class="btn" onclick="buy('a2')">Mua Acc</button></div>
+  <div class="card"><div class="tag">VÀNG</div><div class="price">320.000đ</div><p>4000–4100 Follow</p><p>Còn: <b id="a3"></b></p><button class="btn" onclick="buy('a3')">Mua Acc</button></div>
 </div>
 </div>
 
-<!-- REVIEWS -->
+<!-- REVIEW -->
 <div class="section">
 <h2>⭐ Đánh Giá Khách Hàng</h2>
 <div class="review">⭐⭐⭐⭐⭐ Nguyễn Minh T. – Nhận mã rất nhanh</div>
 <div class="review">⭐⭐⭐⭐⭐ Trần Hoàng A. – Shop uy tín</div>
-<div class="review">⭐⭐⭐⭐⭐ Lê Ngọc H. – Support nhiệt tình</div>
 
-<h3>✍️ Thêm đánh giá của bạn</h3>
+<h3>✍️ Thêm đánh giá</h3>
 <form onsubmit="addReview(event)">
-  <input id="rvName" type="text" placeholder="Tên của bạn" required>
+  <input id="rvName" required placeholder="Tên">
   <select id="rvStar">
-    <option value="5">⭐⭐⭐⭐⭐ (5 sao)</option>
-    <option value="4">⭐⭐⭐⭐ (4 sao)</option>
-    <option value="3">⭐⭐⭐ (3 sao)</option>
+    <option value="5">⭐⭐⭐⭐⭐</option>
+    <option value="4">⭐⭐⭐⭐</option>
+    <option value="3">⭐⭐⭐</option>
   </select>
-  <input id="rvText" type="text" placeholder="Nội dung đánh giá" required>
-  <button class="btn">Gửi đánh giá</button>
+  <input id="rvText" required placeholder="Nội dung">
+  <button class="btn">Gửi</button>
 </form>
-
 <div id="userReviews"></div>
-</div>
-
-<!-- BILL -->
-<div class="section">
-<h2>📤 Gửi Bill Thanh Toán</h2>
-<form>
-  <input type="text" placeholder="Số điện thoại" required>
-  <select><option>Voucher</option><option>Acc Shopee</option></select>
-  <input type="file" required>
-  <button class="btn">Gửi Bill</button>
-</form>
 </div>
 
 </div>
 
 <!-- POPUP -->
 <div class="popup" id="popup">
-<div class="popup-box">
-  <span class="close" onclick="popup.style.display='none'">✖</span>
+  <div class="popup-box">
+    <span class="close" onclick="popup.style.display='none'">✖</span>
+    <h2>💳 Thanh Toán</h2>
+    <p><b>Ngân hàng:</b> MB Bank</p>
+    <p><b>STK:</b> 0376805925</p>
+    <hr>
+    <p><b>📨 Gửi bill qua:</b></p>
+    <p>Telegram: <b>xod50</b></p>
+    <p>Zalo: <b>0376805925</b></p>
+  </div>
+</div>
 
-  <h2>💳 Thanh Toán</h2>
-  <p><b>Ngân Hàng:</b> MB Bank</p>
-  <p><b>STK:</b> 0376805925</p>
-
-  <hr>
-
-  <p><b>📨 Gửi bill qua:</b></p>
-  <p>🌸 Telegram: <b>xod50</b></p>
-  <p>🌸 Zalo: <b>0376805925</b></p>
 <footer>
 Cam kết minh bạch – hoàn tiền nếu lỗi – hỗ trợ Zalo / Telegram
 </footer>
@@ -139,6 +154,7 @@ let stock={
  a2:localStorage.a2?+localStorage.a2:4,
  a3:localStorage.a3?+localStorage.a3:2
 };
+
 function render(){
  for(let k in stock){
   document.getElementById(k).innerText=stock[k];
@@ -147,27 +163,29 @@ function render(){
  }
 }
 render();
+
 function buy(k){
  if(stock[k]<=0)return;
  stock[k]--; localStorage[k]=stock[k];
  render(); popup.style.display="block";
 }
+
 function countdown(){
  let now=new Date(), end=new Date(); end.setHours(24,0,0,0);
  let d=end-now;
- let h=Math.floor(d/3600000), m=Math.floor(d/60000)%60, s=Math.floor(d/1000)%60;
+ let h=Math.floor(d/3600000),
+ m=Math.floor(d/60000)%60,
+ s=Math.floor(d/1000)%60;
  document.getElementById("countdown").innerText=
-  String(h).padStart(2,"0")+":"+String(m).padStart(2,"0")+":"+String(s).padStart(2,"0");
+ String(h).padStart(2,"0")+":"+String(m).padStart(2,"0")+":"+String(s).padStart(2,"0");
 }
 setInterval(countdown,1000); countdown();
 
-/* REVIEW USER */
-let reviews = JSON.parse(localStorage.getItem("reviews")||"[]");
+/* REVIEW */
+let reviews=JSON.parse(localStorage.getItem("reviews")||"[]");
 function renderReviews(){
- document.getElementById("userReviews").innerHTML =
- reviews.map(r=>`
-  <div class="review">${"⭐".repeat(r.star)} <b>${r.name}</b><br>${r.text}</div>
- `).join("");
+ document.getElementById("userReviews").innerHTML=
+ reviews.map(r=>`<div class="review">${"⭐".repeat(r.star)} <b>${r.name}</b><br>${r.text}</div>`).join("");
 }
 function addReview(e){
  e.preventDefault();
@@ -177,5 +195,6 @@ function addReview(e){
 }
 renderReviews();
 </script>
+
 </body>
 </html>
