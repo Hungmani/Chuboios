@@ -3,8 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Voucher & Acc Shopee Uy Tín</title>
-<meta name="description" content="Bán voucher Shopee & acc Shopee rank cao. Uy tín – giao dịch nhanh – hỗ trợ Zalo.">
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
 :root{--shopee:#ee4d2d;--bg:#f5f5f5}
 body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--bg);font-size:18px}
@@ -82,6 +81,20 @@ footer{background:#fff;padding:30px;font-size:16px;color:#555;line-height:1.8}
 <div class="review">⭐⭐⭐⭐⭐ Nguyễn Minh T. – Nhận mã rất nhanh</div>
 <div class="review">⭐⭐⭐⭐⭐ Trần Hoàng A. – Shop uy tín</div>
 <div class="review">⭐⭐⭐⭐⭐ Lê Ngọc H. – Support nhiệt tình</div>
+
+<h3>✍️ Thêm đánh giá của bạn</h3>
+<form onsubmit="addReview(event)">
+  <input id="rvName" type="text" placeholder="Tên của bạn" required>
+  <select id="rvStar">
+    <option value="5">⭐⭐⭐⭐⭐ (5 sao)</option>
+    <option value="4">⭐⭐⭐⭐ (4 sao)</option>
+    <option value="3">⭐⭐⭐ (3 sao)</option>
+  </select>
+  <input id="rvText" type="text" placeholder="Nội dung đánh giá" required>
+  <button class="btn">Gửi đánh giá</button>
+</form>
+
+<div id="userReviews"></div>
 </div>
 
 <!-- BILL -->
@@ -104,7 +117,7 @@ footer{background:#fff;padding:30px;font-size:16px;color:#555;line-height:1.8}
   <h2>💳 Thanh Toán</h2>
   <p><b>MB Bank:</b> 0376805925</p>
   <p><b>Nguyễn Phi Hùng</b></p>
-  <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=MB0376805925" width="200">
+  <img src="https://i.imgur.com/kNKgocS.jpeg" width="220" alt="QR MB Bank">
   <p>Gửi bill qua Zalo: <b>0376805925</b></p>
 </div>
 </div>
@@ -145,6 +158,22 @@ function countdown(){
   String(h).padStart(2,"0")+":"+String(m).padStart(2,"0")+":"+String(s).padStart(2,"0");
 }
 setInterval(countdown,1000); countdown();
+
+/* REVIEW USER */
+let reviews = JSON.parse(localStorage.getItem("reviews")||"[]");
+function renderReviews(){
+ document.getElementById("userReviews").innerHTML =
+ reviews.map(r=>`
+  <div class="review">${"⭐".repeat(r.star)} <b>${r.name}</b><br>${r.text}</div>
+ `).join("");
+}
+function addReview(e){
+ e.preventDefault();
+ reviews.unshift({name:rvName.value,star:+rvStar.value,text:rvText.value});
+ localStorage.setItem("reviews",JSON.stringify(reviews));
+ e.target.reset(); renderReviews();
+}
+renderReviews();
 </script>
 </body>
 </html>
