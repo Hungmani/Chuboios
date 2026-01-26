@@ -1,259 +1,218 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-<meta charset="UTF-8">
-<title>Voucher Shopee Giá Rẻ</title>
+    <meta charset="UTF-8">
+    <title>VouCher Shoppe</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f6fa;
+            margin: 0;
+        }
 
-<style>
-* { box-sizing: border-box; }
-body {
-    margin: 0;
-    font-family: 'Segoe UI', sans-serif;
-    background: #f2f2f2;
-}
+        marquee {
+            background: #ff4757;
+            color: white;
+            padding: 10px;
+            font-weight: bold;
+            font-size: 16px;
+        }
 
-/* TOP BAR */
-.topbar {
-    background: #ff5722;
-    color: white;
-    text-align: center;
-    padding: 10px;
-}
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 20px;
+        }
 
-/* HEADER */
-header {
-    background: linear-gradient(135deg, #ff5722, #ff9800);
-    padding: 40px 20px;
-    color: white;
-    text-align: center;
-}
+        h1, h2 {
+            text-align: center;
+            color: #2f3542;
+        }
 
-/* CONTAINER */
-.container {
-    max-width: 1200px;
-    margin: auto;
-    padding: 30px 15px;
-}
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+        }
 
-/* TRUST */
-.trust {
-    background: white;
-    border-radius: 18px;
-    padding: 30px;
-    margin-bottom: 40px;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
-    gap: 20px;
-    text-align: center;
-}
-.trust strong { font-size: 22px; color: #ff5722; }
+        .card {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 0 12px rgba(0,0,0,0.1);
+        }
 
-/* GRID */
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 25px;
-}
+        .card h3 {
+            color: #3742fa;
+        }
 
-/* CARD */
-.card {
-    background: white;
-    border-radius: 18px;
-    padding: 22px;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.12);
-    transition: 0.3s;
-    position: relative;
-}
-.card:hover { transform: translateY(-10px); }
+        .card button {
+            background: #2ed573;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 15px;
+        }
 
-.badge {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    background: #e91e63;
-    color: white;
-    padding: 5px 10px;
-    border-radius: 20px;
-    font-size: 13px;
-}
+        .card button:hover {
+            background: #1eae60;
+        }
 
-.card h2 { color: #ff5722; }
-.value { font-size: 18px; margin: 10px 0; }
-.price { font-size: 24px; font-weight: bold; color: #2e7d32; }
+        .reviews {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
 
-.btn {
-    margin-top: 15px;
-    padding: 12px;
-    background: linear-gradient(135deg, #ff5722, #ff9800);
-    color: white;
-    text-align: center;
-    border-radius: 12px;
-    cursor: pointer;
-    font-weight: bold;
-}
+        textarea {
+            width: 100%;
+            height: 80px;
+            padding: 10px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+        }
 
-/* REVIEW */
-.review, .info {
-    margin-top: 50px;
-    background: white;
-    border-radius: 18px;
-    padding: 30px;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
-}
-.review-item {
-    border-bottom: 1px dashed #ddd;
-    padding: 15px 0;
-}
-.review-item:last-child { border-bottom: none; }
-.stars { color: #ffc107; }
+        .popup {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.6);
+        }
 
-/* MODAL */
-.modal {
-    display: none;
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.7);
-    justify-content: center;
-    align-items: center;
-    z-index: 999;
-}
-.modal-box {
-    background: white;
-    width: 90%;
-    max-width: 500px;
-    border-radius: 18px;
-    padding: 25px;
-}
-.bank {
-    background: #f9f9f9;
-    border-radius: 12px;
-    padding: 15px;
-}
-.notice {
-    margin-top: 15px;
-    background: #fff8e1;
-    border-left: 6px solid #ff9800;
-    padding: 15px;
-    border-radius: 10px;
-}
-.zalo { color: #0068ff; font-weight: bold; }
-.close {
-    margin-top: 20px;
-    padding: 12px;
-    width: 100%;
-    background: #ff5722;
-    color: white;
-    border: none;
-    border-radius: 12px;
-    font-size: 16px;
-    cursor: pointer;
-}
-</style>
+        .popup-content {
+            background: white;
+            width: 320px;
+            padding: 20px;
+            margin: 120px auto;
+            border-radius: 10px;
+            position: relative;
+            text-align: center;
+        }
+
+        .close {
+            position: absolute;
+            right: 10px;
+            top: 5px;
+            font-size: 22px;
+            cursor: pointer;
+            color: red;
+        }
+    </style>
 </head>
-
 <body>
 
-<div class="topbar">
-🔥 Ưu đãi có hạn – Giao mã nhanh – Hỗ trợ Zalo 24/7
-</div>
-
-<header>
-    <h1>VOUCHER SHOPEE GIÁ RẺ</h1>
-    <p>Mua 1 lần – Sử dụng lâu dài – Áp dụng đơn từ 0đ</p>
-</header>
+<marquee>🔥 UY TÍN ĐẶT LÊN HÀNG ĐẦU – GIAO DỊCH NHANH – HỖ TRỢ 24/7 🔥</marquee>
 
 <div class="container">
+    <h1>🎟️ VouCher Shoppe</h1>
 
-<div class="trust">
-    <div><strong>3.200+</strong><br>Đơn đã bán</div>
-    <div><strong>97%</strong><br>Khách quay lại</div>
-    <div><strong>Từ 2023</strong><br>Hoạt động</div>
-    <div><strong>24/7</strong><br>Zalo hỗ trợ</div>
-</div>
+    <h2>🔥 Voucher Shopee</h2>
+    <div class="grid">
+        <div class="card">
+            <h3>Mã 1 – 20k</h3>
+            <p>Giảm: 80k</p>
+            <p>Đơn từ: 0đ</p>
+            <p>Còn lại: 67</p>
+            <button onclick="openPopup()">Mua ngay</button>
+        </div>
 
-<div class="grid">
-    <div class="card">
-        <div class="badge">HOT</div>
-        <h2>Mã 120K</h2>
-        <div class="value">Nhận 1.200.000đ</div>
-        <div class="price">120.000đ</div>
-        <div class="btn" onclick="openModal('Mã 120K','120.000đ','1.200.000đ')">Mua mã</div>
+        <div class="card">
+            <h3>Mã 2 – 50k</h3>
+            <p>Giảm: 170k</p>
+            <p>Đơn từ: 0đ</p>
+            <p>Còn lại: 24</p>
+            <button onclick="openPopup()">Mua ngay</button>
+        </div>
+
+        <div class="card">
+            <h3>Mã 3 – 210k</h3>
+            <p>Giảm: 420k</p>
+            <p>Đơn từ: 0đ</p>
+            <p>Còn lại: 13</p>
+            <button onclick="openPopup()">Mua ngay</button>
+        </div>
+
+        <div class="card">
+            <h3>Mã 4 – 250k</h3>
+            <p>Giảm: 700k</p>
+            <p>Đơn từ: 0đ</p>
+            <p>Còn lại: 34</p>
+            <button onclick="openPopup()">Mua ngay</button>
+        </div>
+
+        <div class="card">
+            <h3>Mã 5 – 320k</h3>
+            <p>Giảm: 666k</p>
+            <p>Đơn từ: 0đ</p>
+            <p>Còn lại: 8</p>
+            <button onclick="openPopup()">Mua ngay</button>
+        </div>
     </div>
 
-    <div class="card">
-        <div class="badge">NEW</div>
-        <h2>Mã Người Mới</h2>
-        <div class="value">Nhận 80.000đ</div>
-        <div class="price">20.000đ</div>
-        <div class="btn" onclick="openModal('Mã Người Mới','20.000đ','80.000đ')">Mua mã</div>
+    <h2>👑 Acc Shopee Rank Cao</h2>
+    <div class="grid">
+        <div class="card">
+            <h3>Acc 1</h3>
+            <p>Giá: 190k</p>
+            <p>Rank: Bạc</p>
+            <p>Follow: 2100–2200</p>
+            <button onclick="openPopup()">Mua ngay</button>
+        </div>
+
+        <div class="card">
+            <h3>Acc 2</h3>
+            <p>Giá: 260k</p>
+            <p>Rank: Bạc</p>
+            <p>Follow: 2900–3000</p>
+            <button onclick="openPopup()">Mua ngay</button>
+        </div>
+
+        <div class="card">
+            <h3>Acc 3</h3>
+            <p>Giá: 320k</p>
+            <p>Rank: Vàng</p>
+            <p>Follow: 4000–4100</p>
+            <button onclick="openPopup()">Mua ngay</button>
+        </div>
     </div>
+
+    <h2>⭐ Đánh Giá Khách Hàng</h2>
+    <div class="reviews">
+        ⭐⭐⭐⭐⭐ Shop rất uy tín, nhận mã nhanh  
+        <br>⭐⭐⭐⭐⭐ Acc chuẩn, follow thật  
+        <br>⭐⭐⭐⭐⭐ Giao dịch ok, sẽ ủng hộ tiếp
+    </div>
+
+    <textarea placeholder="Nhập đánh giá của bạn..."></textarea>
+    <br><br>
+    <button>Gửi đánh giá</button>
 </div>
 
-<div class="review">
-<h3 style="color:#ff5722">⭐ ĐÁNH GIÁ KHÁCH HÀNG</h3>
-
-<div class="review-item">
-    <div class="stars">★★★★★</div>
-    Nguyễn Minh T. – Giao mã rất nhanh
-</div>
-
-<h3 style="margin-top:30px;color:#ff5722">✍️ VIẾT ĐÁNH GIÁ</h3>
-
-<input id="reviewName" placeholder="Tên của bạn"
-style="width:100%;padding:12px;border-radius:10px;border:1px solid #ddd;margin-bottom:10px">
-
-<textarea id="reviewContent" placeholder="Nội dung đánh giá..."
-style="width:100%;padding:12px;border-radius:10px;border:1px solid #ddd;height:80px"></textarea>
-
-<div class="btn" onclick="addReview()">Gửi đánh giá</div>
-</div>
-
-</div>
-
-<!-- MODAL -->
-<div class="modal" id="modal">
-<div class="modal-box">
-<h3 id="modalTitle" style="color:#ff5722"></h3>
-
-<p><b>💰 Thanh toán:</b> <span id="modalPrice"></span></p>
-<p><b>🎁 Nhận:</b> <span id="modalValue"></span></p>
-
-<div class="bank">
-🏦 <b>MB Bank</b><br>
-💳 <b>0376805925</b><br>
-👤 Nguyễn Phi Hùng
-</div>
-
-<div class="notice">
-📸 Gửi bill qua Zalo: <span class="zalo">0376805925</span>
-</div>
-
-<button class="close" onclick="closeModal()">Đã hiểu</button>
-</div>
+<!-- POPUP THANH TOÁN -->
+<div id="popup" class="popup">
+    <div class="popup-content">
+        <span class="close" onclick="closePopup()">×</span>
+        <h2>💳 Thanh Toán</h2>
+        <p><b>MB Bank:</b> 0376805925</p>
+        <p><b>Tên:</b> Nguyễn Phi Hùng</p>
+        <hr>
+        <p>📸 Gửi bill xác nhận</p>
+        <p>Zalo: 0376805925</p>
+        <p>Telegram: Xod50</p>
+    </div>
 </div>
 
 <script>
-function openModal(title, price, value) {
-    modal.style.display = "flex";
-    modalTitle.innerText = title;
-    modalPrice.innerText = price;
-    modalValue.innerText = value;
-}
-function closeModal() {
-    modal.style.display = "none";
-}
-function addReview() {
-    if (!reviewName.value || !reviewContent.value) {
-        alert("Vui lòng nhập đầy đủ!");
-        return;
+    function openPopup() {
+        document.getElementById("popup").style.display = "block";
     }
-    const div = document.createElement("div");
-    div.className = "review-item";
-    div.innerHTML = `<div class="stars">★★★★★</div>${reviewName.value} – ${reviewContent.value}`;
-    document.querySelector(".review").appendChild(div);
-    reviewName.value = reviewContent.value = "";
-}
+    function closePopup() {
+        document.getElementById("popup").style.display = "none";
+    }
 </script>
 
 </body>
