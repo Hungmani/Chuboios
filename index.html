@@ -2,157 +2,78 @@
 <html lang="vi">
 <head>
 <meta charset="UTF-8">
-<title>Voucher Shopee | Uy Tín Hàng Đầu</title>
+<title>Voucher Shopee Uy Tín</title>
 
 <style>
-:root{
-    --shopee:#ee4d2d;
-    --bg:#f5f5f5;
-}
+:root{--shopee:#ee4d2d;--bg:#f5f5f5}
+body{margin:0;font-family:Arial;background:var(--bg)}
+header{background:var(--shopee);color:#fff;padding:15px}
+.marquee{background:#ff7337;color:#fff;padding:8px;font-weight:bold}
 
-body{
-    margin:0;
-    font-family: Arial, sans-serif;
-    background:var(--bg);
-}
+.container{max-width:1200px;margin:auto;padding:15px}
+.section{margin-bottom:35px}
+h2{margin-bottom:15px}
 
-/* HEADER */
-header{
-    background:var(--shopee);
-    color:#fff;
-    padding:15px;
-}
-
-header h1{
-    margin:0;
-}
-
-.marquee{
-    background:#ff7337;
-    color:#fff;
-    padding:8px;
-    font-weight:bold;
-}
-
-/* LAYOUT */
-.container{
-    max-width:1200px;
-    margin:auto;
-    padding:20px;
-}
-
-.section{
-    margin-bottom:40px;
-}
-
-.section h2{
-    color:#222;
-    margin-bottom:15px;
-}
-
-/* BADGE */
-.badges{
-    display:flex;
-    gap:10px;
-    flex-wrap:wrap;
-}
-
+.badges{display:flex;gap:10px;flex-wrap:wrap}
 .badge{
-    background:#fff;
-    padding:10px 15px;
-    border-radius:20px;
-    font-size:14px;
-    box-shadow:0 0 5px rgba(0,0,0,0.1);
+ background:#fff;padding:10px 15px;border-radius:20px;
+ box-shadow:0 2px 6px rgba(0,0,0,.1);font-size:14px
 }
 
-/* GRID */
-.grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-    gap:20px;
-}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
 
-/* VOUCHER CARD */
-.voucher{
-    background:#fff;
-    border-radius:12px;
-    overflow:hidden;
-    box-shadow:0 4px 10px rgba(0,0,0,0.1);
+.card{
+ background:#fff;border-radius:12px;overflow:hidden;
+ box-shadow:0 4px 10px rgba(0,0,0,.1)
 }
-
-.voucher img{
-    width:100%;
-    height:140px;
-    object-fit:cover;
-}
-
-.voucher-content{
-    padding:15px;
-}
-
-.price{
-    color:var(--shopee);
-    font-size:20px;
-    font-weight:bold;
-}
+.card img{width:100%;height:140px;object-fit:cover}
+.card .content{padding:15px}
+.price{color:var(--shopee);font-size:20px;font-weight:bold}
 
 .btn{
-    width:100%;
-    background:var(--shopee);
-    color:#fff;
-    border:none;
-    padding:10px;
-    border-radius:6px;
-    cursor:pointer;
-    margin-top:10px;
+ width:100%;background:var(--shopee);color:#fff;border:none;
+ padding:12px;border-radius:6px;font-size:16px;
+ cursor:pointer;margin-top:10px
 }
 
-.btn:hover{
-    opacity:0.9;
-}
-
-/* REVIEW */
 .review{
-    background:#fff;
-    padding:15px;
-    border-radius:10px;
-    margin-bottom:10px;
-    display:flex;
-    gap:10px;
+ background:#fff;padding:12px;border-radius:10px;
+ margin-bottom:10px;display:flex;gap:10px
 }
-
-.avatar{
-    width:40px;
-    height:40px;
-    border-radius:50%;
-    background:#ccc;
-}
+.avatar{width:40px;height:40px;border-radius:50%;background:#ccc}
 
 /* POPUP */
-.popup{
-    display:none;
-    position:fixed;
-    inset:0;
-    background:rgba(0,0,0,0.6);
-}
-
+.popup{display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:10}
 .popup-box{
-    background:#fff;
-    width:320px;
-    margin:120px auto;
-    padding:20px;
-    border-radius:10px;
-    text-align:center;
-    position:relative;
+ background:#fff;width:340px;margin:70px auto;padding:20px;
+ border-radius:12px;text-align:center;position:relative
+}
+.close{position:absolute;top:5px;right:10px;font-size:22px;cursor:pointer;color:red}
+.qr{width:200px;margin:10px auto}
+
+/* LIVE BUY */
+.live{
+ position:fixed;bottom:20px;left:20px;
+ background:#fff;padding:10px 15px;border-radius:10px;
+ box-shadow:0 4px 10px rgba(0,0,0,.2);
+ display:none;z-index:20;font-size:14px
 }
 
-.close{
-    position:absolute;
-    top:5px;
-    right:10px;
-    font-size:22px;
-    cursor:pointer;
-    color:red;
+/* CONTACT FLOAT */
+.contact{
+ position:fixed;right:15px;bottom:20px;z-index:30
+}
+.contact a{
+ display:block;margin-top:10px;
+ background:#fff;padding:10px 14px;border-radius:50px;
+ box-shadow:0 4px 10px rgba(0,0,0,.2);
+ text-decoration:none;color:#000;font-weight:bold
+}
+
+/* POLICY */
+.policy{
+ background:#fff;padding:15px;border-radius:12px;
+ line-height:1.6
 }
 </style>
 </head>
@@ -160,23 +81,23 @@ header h1{
 <body>
 
 <header>
-    <h1>🛒 Voucher Shopee Uy Tín</h1>
+<h1>🛒 Voucher Shopee Uy Tín</h1>
 </header>
 
 <div class="marquee">
-🔥 UY TÍN ĐẶT LÊN HÀNG ĐẦU – HƠN 5.000 GIAO DỊCH THÀNH CÔNG – ONLINE 24/7 🔥
+🔥 UY TÍN ĐẶT LÊN HÀNG ĐẦU – HƠN 5.000 GIAO DỊCH THÀNH CÔNG 🔥
 </div>
 
 <div class="container">
 
-<!-- UY TÍN -->
+<!-- BADGE -->
 <div class="section">
-    <div class="badges">
-        <div class="badge">✅ Giao dịch nhanh</div>
-        <div class="badge">✅ Hoàn tiền nếu lỗi</div>
-        <div class="badge">✅ Hỗ trợ Zalo / Telegram</div>
-        <div class="badge">🔥 Giá rẻ nhất thị trường</div>
-    </div>
+<div class="badges">
+<div class="badge">✅ Hoàn tiền nếu lỗi</div>
+<div class="badge">⚡ Nhận mã trong 2 phút</div>
+<div class="badge">🔒 Thanh toán an toàn</div>
+<div class="badge">📞 Hỗ trợ 24/7</div>
+</div>
 </div>
 
 <!-- VOUCHER -->
@@ -184,59 +105,21 @@ header h1{
 <h2>🎟️ Voucher Shopee Hot</h2>
 <div class="grid">
 
-<div class="voucher">
+<div class="card">
 <img src="https://i.imgur.com/0Z8FQpS.png">
-<div class="voucher-content">
+<div class="content">
 <div class="price">20.000đ</div>
 <p>Giảm 80k – Đơn từ 0đ</p>
-<p>Còn lại: 67</p>
 <button class="btn" onclick="openPopup()">Mua ngay</button>
 </div>
 </div>
 
-<div class="voucher">
+<div class="card">
 <img src="https://i.imgur.com/7V0R6vT.png">
-<div class="voucher-content">
+<div class="content">
 <div class="price">50.000đ</div>
 <p>Giảm 170k – Đơn từ 0đ</p>
-<p>Còn lại: 24</p>
 <button class="btn" onclick="openPopup()">Mua ngay</button>
-</div>
-</div>
-
-<div class="voucher">
-<img src="https://i.imgur.com/2bX9K6y.png">
-<div class="voucher-content">
-<div class="price">210.000đ</div>
-<p>Giảm 420k – Đơn từ 0đ</p>
-<p>Còn lại: 13</p>
-<button class="btn" onclick="openPopup()">Mua ngay</button>
-</div>
-</div>
-
-</div>
-</div>
-
-<!-- ACC -->
-<div class="section">
-<h2>👑 Acc Shopee Rank Cao</h2>
-<div class="grid">
-
-<div class="voucher">
-<img src="https://i.imgur.com/1qQZ1Zm.png">
-<div class="voucher-content">
-<div class="price">190.000đ</div>
-<p>Rank Bạc – 2100 Follow</p>
-<button class="btn" onclick="openPopup()">Mua Acc</button>
-</div>
-</div>
-
-<div class="voucher">
-<img src="https://i.imgur.com/1qQZ1Zm.png">
-<div class="voucher-content">
-<div class="price">320.000đ</div>
-<p>Rank Vàng – 4000 Follow</p>
-<button class="btn" onclick="openPopup()">Mua Acc</button>
 </div>
 </div>
 
@@ -246,46 +129,64 @@ header h1{
 <!-- REVIEW -->
 <div class="section">
 <h2>⭐ Đánh Giá Khách Hàng</h2>
-
-<div class="review">
-<div class="avatar"></div>
-<div>⭐⭐⭐⭐⭐ Mua mã nhận ngay, shop uy tín</div>
+<div class="review"><div class="avatar"></div>⭐⭐⭐⭐⭐ Shop uy tín, nhận mã liền</div>
+<div class="review"><div class="avatar"></div>⭐⭐⭐⭐⭐ Thanh toán xong là có mã</div>
+<div class="review"><div class="avatar"></div>⭐⭐⭐⭐⭐ Hỗ trợ nhanh, nhiệt tình</div>
 </div>
 
-<div class="review">
-<div class="avatar"></div>
-<div>⭐⭐⭐⭐⭐ Acc đúng mô tả, follow thật</div>
+<!-- POLICY -->
+<div class="section">
+<h2>📜 Cam Kết & Chính Sách</h2>
+<div class="policy">
+✔ Cam kết giao đúng sản phẩm mô tả<br>
+✔ Hoàn tiền 100% nếu lỗi từ shop<br>
+✔ Không lưu thông tin khách hàng<br>
+✔ Hỗ trợ xử lý trong giờ hành chính
+</div>
 </div>
 
-<div class="review">
-<div class="avatar"></div>
-<div>⭐⭐⭐⭐⭐ Sẽ quay lại mua tiếp</div>
-</div>
 </div>
 
+<!-- LIVE BUY -->
+<div class="live" id="live"></div>
+
+<!-- CONTACT -->
+<div class="contact">
+<a href="https://zalo.me/0376805925" target="_blank">💬 Zalo</a>
+<a href="#">📨 Telegram</a>
 </div>
 
-<!-- POPUP -->
+<!-- POPUP PAYMENT -->
 <div class="popup" id="popup">
 <div class="popup-box">
 <span class="close" onclick="closePopup()">×</span>
 <h2>💳 Thanh Toán</h2>
+<img class="qr" src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=MB-0376805925">
 <p><b>MB Bank:</b> 0376805925</p>
 <p><b>Nguyễn Phi Hùng</b></p>
 <hr>
-<p>📸 Gửi bill xác nhận</p>
-<p>Zalo: 0376805925</p>
-<p>Telegram: Xod50</p>
+<p>📸 Chuyển khoản xong vui lòng gửi bill</p>
+<button class="btn" onclick="alert('Vui lòng gửi bill qua Zalo để nhận mã!')">
+Tôi đã thanh toán
+</button>
 </div>
 </div>
 
 <script>
-function openPopup(){
-    document.getElementById("popup").style.display="block";
-}
-function closePopup(){
-    document.getElementById("popup").style.display="none";
-}
+function openPopup(){popup.style.display="block"}
+function closePopup(){popup.style.display="none"}
+
+// LIVE BUY FAKE
+const names=["Anh T.","Minh H.","Ngọc A.","Hoàng P.","Tuấn K."];
+const products=["Voucher 20k","Voucher 50k","Acc Shopee"];
+setInterval(()=>{
+ let n=names[Math.floor(Math.random()*names.length)];
+ let p=products[Math.floor(Math.random()*products.length)];
+ let live=document.getElementById("live");
+ live.innerText=`🔥 ${n} vừa mua ${p}`;
+ live.style.display="block";
+ setTimeout(()=>live.style.display="none",4000);
+},6000);
 </script>
 
 </body>
