@@ -2,187 +2,125 @@
 <html lang="vi">
 <head>
 <meta charset="UTF-8">
-<title>Job Nhiệm Vụ</title>
+<title>Mã Voucher Shopee</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <style>
-*{
-    box-sizing:border-box;
-    margin:0;
-    padding:0;
-}
-body{
-    font-family:Arial, Helvetica, sans-serif;
-    background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
-    color:#fff;
-}
-.container{
-    max-width:900px;
-    margin:auto;
-    padding:30px;
-}
-h1{
-    text-align:center;
-    font-size:52px;
-    color:#00ffd5;
-    margin-bottom:40px;
-}
-.job{
-    background:rgba(255,255,255,0.12);
-    padding:25px;
-    border-radius:18px;
-    margin-bottom:25px;
-    box-shadow:0 0 20px rgba(0,0,0,0.4);
-}
-.job h2{
-    font-size:30px;
-    color:#ffd700;
-}
-.price{
-    margin-top:10px;
-    font-size:20px;
-}
-.reward{
-    margin-top:8px;
-    font-size:24px;
-    color:#00ff88;
-    font-weight:bold;
-}
-.content{
-    margin-top:12px;
-    font-size:18px;
-    line-height:1.6;
-}
-button{
-    margin-top:18px;
-    padding:12px 35px;
-    font-size:18px;
-    border:none;
-    border-radius:30px;
-    background:#00ffd5;
-    color:#000;
-    cursor:pointer;
-    transition:0.3s;
-}
-button:hover{
-    background:#00ff88;
-    transform:scale(1.05);
-}
-.benefit{
-    font-size:18px;
-    line-height:1.8;
-}
-.payment{
-    text-align:center;
-}
-.payment img{
-    margin-top:15px;
-    max-width:100%;
-    border-radius:15px;
-    box-shadow:0 0 15px rgba(0,0,0,0.5);
-}
-.note{
-    margin-top:15px;
-    font-size:18px;
-    color:#ffd700;
-}
-.next-step{
-    display:none;
-    margin-top:20px;
-    background:rgba(0,0,0,0.4);
-    padding:20px;
-    border-radius:15px;
-    font-size:18px;
-    line-height:1.6;
-}
-.support{
-    margin-top:15px;
-    font-size:16px;
-    color:#00ffd5;
-}
-footer{
-    text-align:center;
-    margin-top:40px;
-    font-size:14px;
-    opacity:0.8;
-}
+    body {
+        font-family: Arial, sans-serif;
+        background: linear-gradient(135deg, #ff5722, #ff9800);
+        margin: 0;
+        padding: 20px;
+        color: #333;
+    }
+
+    h1 {
+        text-align: center;
+        color: #fff;
+        margin-bottom: 30px;
+        animation: fadeIn 1.5s ease;
+    }
+
+    .container {
+        max-width: 800px;
+        margin: auto;
+    }
+
+    .voucher {
+        background: #fff;
+        border-radius: 10px;
+        padding: 20px;
+        margin-bottom: 20px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        animation: slideUp 1s ease;
+    }
+
+    .voucher h2 {
+        color: #ff5722;
+        margin: 0 0 10px;
+    }
+
+    .voucher p {
+        margin: 5px 0;
+    }
+
+    .buy-btn {
+        margin-top: 10px;
+        padding: 10px 20px;
+        background: #ff5722;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+
+    .buy-btn:hover {
+        background: #e64a19;
+    }
+
+    .payment {
+        background: #fff;
+        border-radius: 10px;
+        padding: 20px;
+        margin-top: 40px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+
+    .payment h2 {
+        color: #ff5722;
+    }
+
+    .pay-btn {
+        margin-top: 15px;
+        padding: 12px 25px;
+        background: green;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+    .pay-btn:hover {
+        background: darkgreen;
+    }
+
+    .code-box {
+        display: none;
+        margin-top: 20px;
+        padding: 15px;
+        background: #f1f1f1;
+        border-radius: 5px;
+        font-weight: bold;
+        color: #d32f2f;
+        text-align: center;
+    }
+
+    @keyframes fadeIn {
+        from {opacity: 0;}
+        to {opacity: 1;}
+    }
+
+    @keyframes slideUp {
+        from {transform: translateY(30px); opacity: 0;}
+        to {transform: translateY(0); opacity: 1;}
+    }
 </style>
 </head>
 
 <body>
+
+<h1>MÃ VOUCHER SHOPEE</h1>
+
 <div class="container">
 
-<h1>JOB NHIỆM VỤ</h1>
-
-<div class="job">
-    <h2>🔓 Mở khoá nhiệm vụ 1</h2>
-    <div class="price">💰 Phí mở khoá: <b>100.000đ</b></div>
-    <div class="reward">🎁 Thưởng: 300.000đ</div>
-    <div class="content">
-        📌 Nội dung nhiệm vụ:<br>
-        – Comment 30 bài viết Facebook theo mẫu
-    </div>
-    <button onclick="scrollToPayment()">Tham gia nhiệm vụ</button>
-</div>
-
-<div class="job">
-    <h2>🔓 Mở khoá nhiệm vụ 2</h2>
-    <div class="price">💰 Phí mở khoá: <b>200.000đ</b></div>
-    <div class="reward">🎁 Thưởng: 700.000đ</div>
-    <div class="content">
-        📌 Nội dung nhiệm vụ:<br>
-        – Like 70 video TikTok
-    </div>
-    <button onclick="scrollToPayment()">Tham gia nhiệm vụ</button>
-</div>
-
-<div class="job">
-    <h2>⭐ Quyền lợi</h2>
-    <div class="benefit">
-        ✅ Làm việc online tại nhà<br>
-        ✅ Không yêu cầu kinh nghiệm<br>
-        ✅ Thanh toán nhanh trong ngày<br>
-        ✅ Hỗ trợ 24/7
-    </div>
-</div>
-
-<div class="job payment" id="payment">
-    <h2>💳 Thanh Toán Nhiệm Vụ</h2>
-    <img src="https://i.imgur.com/zO6u3LO.jpeg" alt="Thanh toán nhiệm vụ">
-
-    <div class="note">
-        👉 Sau khi thanh toán, nhấn nút bên dưới để xem bước tiếp theo
+    <div class="voucher">
+        <h2>Mã 1: 120K</h2>
+        <p>Nhận Voucher: <b>1.200.000đ</b></p>
+        <p>Áp dụng cho đơn hàng từ <b>0đ</b></p>
+        <button class="buy-btn" onclick="scrollToPay()">Mua mã</button>
     </div>
 
-    <button onclick="showNextStep()">Tôi đã thanh toán</button>
-
-    <div class="next-step" id="nextStep">
-        ✅ <b>Bước tiếp theo:</b><br>
-        – Chụp màn hình thanh toán<br>
-        – Gửi minh chứng cho admin<br>
-        – Nhận nhiệm vụ & bắt đầu làm việc<br>
-        – Hoàn thành sẽ được thanh toán thưởng
-    </div>
-
-    <div class="support">
-        ⚠️ Nếu gặp sự cố, liên hệ Telegram: <b>Xod50</b>
-    </div>
-</div>
-
-<footer>
-    © 2026 Job Nhiệm Vụ | Uy tín – Minh bạch – An toàn
-</footer>
-
-</div>
-
-<script>
-function scrollToPayment(){
-    document.getElementById("payment").scrollIntoView({
-        behavior:"smooth"
-    });
-}
-function showNextStep(){
-    document.getElementById("nextStep").style.display="block";
-}
-</script>
-
-</body>
-</html>
+    <div class="voucher">
+        <h2
