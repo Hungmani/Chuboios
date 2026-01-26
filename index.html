@@ -42,6 +42,24 @@ header h1 {
     padding: 30px 15px;
 }
 
+/* TRUST */
+.trust {
+    background: white;
+    border-radius: 18px;
+    padding: 30px;
+    margin-bottom: 40px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+    gap: 20px;
+    text-align: center;
+}
+
+.trust strong {
+    font-size: 22px;
+    color: #ff5722;
+}
+
 /* GRID */
 .grid {
     display: grid;
@@ -74,14 +92,9 @@ header h1 {
     font-size: 13px;
 }
 
-.card h2 {
-    color: #ff5722;
-}
+.card h2 { color: #ff5722; }
 
-.value {
-    font-size: 18px;
-    margin: 10px 0;
-}
+.value { font-size: 18px; margin: 10px 0; }
 
 .price {
     font-size: 24px;
@@ -100,7 +113,7 @@ header h1 {
     font-weight: bold;
 }
 
-/* INFO BOX */
+/* INFO */
 .info {
     margin-top: 50px;
     background: white;
@@ -109,9 +122,23 @@ header h1 {
     box-shadow: 0 15px 35px rgba(0,0,0,0.1);
 }
 
-.info h3 {
-    color: #ff5722;
+/* REVIEW */
+.review {
+    margin-top: 50px;
+    background: white;
+    border-radius: 18px;
+    padding: 30px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
 }
+
+.review-item {
+    border-bottom: 1px dashed #ddd;
+    padding: 15px 0;
+}
+
+.review-item:last-child { border-bottom: none; }
+
+.stars { color: #ffc107; }
 
 /* MODAL */
 .modal {
@@ -132,15 +159,10 @@ header h1 {
     padding: 25px;
 }
 
-.modal-box h3 {
-    color: #ff5722;
-}
-
 .bank {
     background: #f9f9f9;
     border-radius: 12px;
     padding: 15px;
-    font-size: 17px;
 }
 
 .notice {
@@ -151,10 +173,7 @@ header h1 {
     border-radius: 10px;
 }
 
-.zalo {
-    color: #0068ff;
-    font-weight: bold;
-}
+.zalo { color: #0068ff; font-weight: bold; }
 
 .close {
     margin-top: 20px;
@@ -188,122 +207,89 @@ footer {
 </header>
 
 <div class="container">
-<div class="grid">
-
-    <!-- VOUCHER CŨ -->
-    <div class="card">
-        <div class="badge">HOT</div>
-        <h2>Mã 120K</h2>
-        <div class="value">Nhận voucher 1.200.000đ</div>
-        <div class="price">120.000đ</div>
-        <div class="btn" onclick="openModal('Mã 120K','120.000đ','1.200.000đ')">Mua mã</div>
+    <div class="trust">
+        <div><strong>3.200+</strong><br>Đơn đã bán</div>
+        <div><strong>97%</strong><br>Khách quay lại</div>
+        <div><strong>Từ 2023</strong><br>Hoạt động</div>
+        <div><strong>24/7</strong><br>Zalo hỗ trợ</div>
     </div>
 
-    <div class="card">
-        <div class="badge">BÁN CHẠY</div>
-        <h2>Mã 200K</h2>
-        <div class="value">Nhận voucher 2.700.000đ</div>
-        <div class="price">200.000đ</div>
-        <div class="btn" onclick="openModal('Mã 200K','200.000đ','2.700.000đ')">Mua mã</div>
+    <div class="grid">
+
+        <!-- Voucher -->
+        <div class="card">
+            <div class="badge">HOT</div>
+            <h2>Mã 120K</h2>
+            <div class="value">Nhận voucher 1.200.000đ</div>
+            <div class="price">120.000đ</div>
+            <div class="btn" onclick="openModal('Mã 120K','120.000đ','1.200.000đ')">Mua mã</div>
+        </div>
+
+        <div class="card">
+            <div class="badge">NEW</div>
+            <h2>Mã Người Mới</h2>
+            <div class="value">Nhận voucher 80.000đ</div>
+            <div class="price">20.000đ</div>
+            <div class="btn" onclick="openModal('Mã Người Mới','20.000đ','80.000đ')">Mua mã</div>
+        </div>
+
+        <div class="card">
+            <div class="badge">HOT</div>
+            <h2>TK Shopee Tiếp Thị</h2>
+            <div class="value">2.000 Follow</div>
+            <div class="price">170.000đ</div>
+            <div class="btn" onclick="openModal('TK Shopee 2.000 Follow','170.000đ','2.000 Follow')">Mua ngay</div>
+        </div>
+
+        <div class="card">
+            <div class="badge">BÁN CHẠY</div>
+            <h2>TK Shopee Tiếp Thị</h2>
+            <div class="value">1.500 Follow</div>
+            <div class="price">130.000đ</div>
+            <div class="btn" onclick="openModal('TK Shopee 1.500 Follow','130.000đ','1.500 Follow')">Mua ngay</div>
+        </div>
+
     </div>
 
-    <div class="card">
-        <div class="badge">VIP</div>
-        <h2>Mã 400K</h2>
-        <div class="value">Nhận voucher 4.800.000đ</div>
-        <div class="price">400.000đ</div>
-        <div class="btn" onclick="openModal('Mã 400K','400.000đ','4.800.000đ')">Mua mã</div>
+    <div class="review">
+        <h3 style="color:#ff5722">⭐ ĐÁNH GIÁ KHÁCH HÀNG</h3>
+        <div class="review-item">
+            <div class="stars">★★★★★</div>
+            Nguyễn Minh T. – Giao mã rất nhanh
+        </div>
+        <div class="review-item">
+            <div class="stars">★★★★★</div>
+            Lê Hoàng A. – Mua nhiều lần đều ok
+        </div>
+        <div class="review-item">
+            <div class="stars">★★★★★</div>
+            Phạm Thúy N. – TK tiếp thị dùng ổn
+        </div>
     </div>
 
-    <div class="card">
-        <div class="badge">VIP</div>
-        <h2>Mã 600K</h2>
-        <div class="value">Nhận voucher 6.500.000đ</div>
-        <div class="price">600.000đ</div>
-        <div class="btn" onclick="openModal('Mã 600K','600.000đ','6.500.000đ')">Mua mã</div>
+    <div class="info">
+        ✔ Giao đúng – hoàn tiền nếu lỗi<br>
+        ✔ Không bán trùng mã<br>
+        ✔ Xác nhận bill rõ ràng
     </div>
-
-    <div class="card">
-        <div class="badge">SIÊU VIP</div>
-        <h2>Mã 800K</h2>
-        <div class="value">Nhận voucher 9.000.000đ</div>
-        <div class="price">800.000đ</div>
-        <div class="btn" onclick="openModal('Mã 800K','800.000đ','9.000.000đ')">Mua mã</div>
-    </div>
-
-    <!-- MÃ NGƯỜI MỚI -->
-    <div class="card">
-        <div class="badge">NEW</div>
-        <h2>Mã Người Mới</h2>
-        <div class="value">Nhận voucher 80.000đ</div>
-        <div class="price">20.000đ</div>
-        <div class="btn" onclick="openModal('Mã Người Mới','20.000đ','80.000đ')">Mua mã</div>
-    </div>
-
-    <!-- SHOPEE TIẾP THỊ -->
-    <div class="card">
-        <div class="badge">HOT</div>
-        <h2>TK Shopee Tiếp Thị</h2>
-        <div class="value">Tài khoản 2.000 Follow</div>
-        <div class="price">170.000đ</div>
-        <div class="btn" onclick="openModal('TK Shopee Tiếp Thị 2.000 Follow','170.000đ','Tài khoản 2.000 Follow')">Mua ngay</div>
-    </div>
-
-    <div class="card">
-        <div class="badge">BÁN CHẠY</div>
-        <h2>TK Shopee Tiếp Thị</h2>
-        <div class="value">Tài khoản 1.500 Follow</div>
-        <div class="price">130.000đ</div>
-        <div class="btn" onclick="openModal('TK Shopee Tiếp Thị 1.500 Follow','130.000đ','Tài khoản 1.500 Follow')">Mua ngay</div>
-    </div>
-
-</div>
-
-<div class="info">
-    <h3>📌 CAM KẾT & LƯU Ý</h3>
-    ✔ Voucher dùng thật – không hoàn tiền<br>
-    ✔ Giao mã sau khi xác nhận bill<br>
-    ✔ Mỗi bill nhận 1 mã<br>
-    ✔ Có thể hết mã vào giờ cao điểm
-</div>
 </div>
 
 <!-- MODAL -->
 <div class="modal" id="modal">
     <div class="modal-box">
         <h3 id="modalTitle"></h3>
-        <p><strong>Giá mua:</strong> <span id="modalPrice"></span></p>
-        <p><strong>Giá trị nhận:</strong> <span id="modalValue"></span></p>
+        <p><b>Giá mua:</b> <span id="modalPrice"></span></p>
+        <p><b>Giá trị nhận:</b> <span id="modalValue"></span></p>
 
         <div class="bank">
             🏦 MB Bank<br>
-            💳 STK: <strong>0376805925</strong><br>
+            💳 0376805925<br>
             👤 Nguyễn Phi Hùng
         </div>
 
         <div class="notice">
-            📸 Chụp bill chuyển khoản & gửi Zalo: <span class="zalo">0376805925</span>
+            📸 Chụp bill & gửi Zalo <span class="zalo">0376805925</span>
         </div>
 
         <button class="close" onclick="closeModal()">Đã hiểu</button>
-    </div>
-</div>
-
-<footer>
-© 2026 Voucher Shopee | Giao mã thủ công qua Zalo
-</footer>
-
-<script>
-function openModal(title, price, value) {
-    modalTitle.innerText = title;
-    modalPrice.innerText = price;
-    modalValue.innerText = value;
-    modal.style.display = "flex";
-}
-function closeModal() {
-    modal.style.display = "none";
-}
-</script>
-
-</body>
-</html>
+    </d
