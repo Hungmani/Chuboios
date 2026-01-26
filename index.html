@@ -49,7 +49,7 @@ header h1 {
     gap: 25px;
 }
 
-/* VOUCHER CARD */
+/* CARD */
 .card {
     background: white;
     border-radius: 18px;
@@ -100,7 +100,7 @@ header h1 {
     font-weight: bold;
 }
 
-/* INFO BOX */
+/* INFO */
 .info {
     margin-top: 50px;
     background: white;
@@ -127,7 +127,7 @@ header h1 {
 .modal-box {
     background: white;
     width: 90%;
-    max-width: 500px;
+    max-width: 520px;
     border-radius: 18px;
     padding: 25px;
     animation: pop 0.3s ease;
@@ -143,6 +143,19 @@ header h1 {
     margin-top: 0;
 }
 
+/* IMAGE */
+.popup-img {
+    text-align: center;
+    margin: 15px 0;
+}
+
+.popup-img img {
+    max-width: 100%;
+    border-radius: 14px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+}
+
+/* BANK */
 .bank {
     background: #f9f9f9;
     border-radius: 12px;
@@ -223,22 +236,6 @@ footer {
         <div class="price">400.000đ</div>
         <div class="btn" onclick="openModal('Mã 400K', '400.000đ', '4.800.000đ')">Mua mã</div>
     </div>
-
-    <div class="card">
-        <div class="badge">VIP</div>
-        <h2>Mã 600K</h2>
-        <div class="value">Nhận voucher 6.500.000đ</div>
-        <div class="price">600.000đ</div>
-        <div class="btn" onclick="openModal('Mã 600K', '600.000đ', '6.500.000đ')">Mua mã</div>
-    </div>
-
-    <div class="card">
-        <div class="badge">SIÊU VIP</div>
-        <h2>Mã 800K</h2>
-        <div class="value">Nhận voucher 9.000.000đ</div>
-        <div class="price">800.000đ</div>
-        <div class="btn" onclick="openModal('Mã 800K', '800.000đ', '9.000.000đ')">Mua mã</div>
-    </div>
 </div>
 
 <div class="info">
@@ -255,6 +252,12 @@ footer {
 <div class="modal" id="modal">
     <div class="modal-box">
         <h3 id="modalTitle"></h3>
+
+        <!-- ẢNH BẠN GỬI -->
+        <div class="popup-img">
+            <img src="https://i.imgur.com/z8OBygP.jpeg" alt="Hướng dẫn thanh toán">
+        </div>
+
         <p><strong>Giá mua:</strong> <span id="modalPrice"></span></p>
         <p><strong>Giá trị nhận:</strong> <span id="modalValue"></span></p>
 
