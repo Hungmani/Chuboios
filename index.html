@@ -3,54 +3,112 @@
 <head>
 <meta charset="UTF-8">
 <title>Voucher & Acc Shopee Uy Tín</title>
-<meta name="description" content="Bán voucher Shopee & acc Shopee rank cao. Thanh toán nhanh, hỗ trợ Zalo.">
+<meta name="description" content="Bán voucher Shopee & acc Shopee rank cao. Uy tín – giao dịch nhanh – hỗ trợ Zalo.">
 
 <style>
 :root{--shopee:#ee4d2d;--bg:#f5f5f5}
-body{margin:0;font-family:Arial;background:var(--bg)}
-header{background:var(--shopee);color:#fff;padding:15px;display:flex;gap:10px;align-items:center}
-.logo{
- width:40px;height:40px;background:#fff;color:var(--shopee);
- border-radius:12px;display:flex;align-items:center;justify-content:center;
- font-weight:bold;font-size:22px
+body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--bg);font-size:18px}
+
+/* HEADER */
+header{
+ background:var(--shopee);
+ color:#fff;
+ padding:24px;
+ display:flex;
+ gap:16px;
+ align-items:center
 }
-.marquee{background:#ff7337;color:#fff;padding:8px;font-weight:bold}
+.logo{
+ width:56px;height:56px;
+ background:#fff;color:var(--shopee);
+ border-radius:16px;
+ display:flex;align-items:center;justify-content:center;
+ font-weight:bold;font-size:28px
+}
 
-.container{max-width:1100px;margin:auto;padding:15px}
-.section{margin-bottom:40px}
-h2{margin-bottom:15px}
+/* MARQUEE */
+.marquee{
+ background:#ff7337;color:#fff;
+ padding:14px;font-weight:bold;
+ white-space:nowrap;overflow:hidden
+}
+.marquee span{
+ display:inline-block;
+ padding-left:100%;
+ animation:run 15s linear infinite
+}
+@keyframes run{
+ 100%{transform:translateX(-100%)}
+}
 
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
+/* LAYOUT */
+.container{max-width:1450px;margin:auto;padding:35px 25px}
+.section{margin-bottom:70px}
+h1{font-size:32px}
+h2{font-size:28px;margin-bottom:30px}
+
+.grid{
+ display:grid;
+ grid-template-columns:repeat(auto-fit,minmax(330px,1fr));
+ gap:35px
+}
 
 .card{
- background:#fff;border-radius:14px;padding:20px;
- box-shadow:0 4px 10px rgba(0,0,0,.1);
+ background:#fff;
+ border-radius:20px;
+ padding:30px;
+ box-shadow:0 10px 25px rgba(0,0,0,.12);
  position:relative
 }
 .tag{
- position:absolute;top:10px;right:10px;
+ position:absolute;top:16px;right:16px;
  background:var(--shopee);color:#fff;
- padding:5px 10px;border-radius:20px;font-size:12px
+ padding:6px 16px;border-radius:30px;font-size:14px
 }
-.price{color:var(--shopee);font-size:22px;font-weight:bold}
+.price{color:var(--shopee);font-size:32px;font-weight:bold}
+
 .btn{
- width:100%;background:var(--shopee);color:#fff;border:none;
- padding:12px;border-radius:8px;font-size:16px;
- cursor:pointer;margin-top:12px
+ width:100%;background:var(--shopee);color:#fff;
+ border:none;padding:20px;border-radius:14px;
+ font-size:20px;cursor:pointer;margin-top:22px
 }
-.btn[disabled]{background:#ccc;cursor:not-allowed}
+.btn[disabled]{background:#ccc}
 
-.popup{
- display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:10
+/* REVIEW */
+.review{
+ background:#fff;
+ padding:18px;
+ border-radius:14px;
+ margin-bottom:12px;
+ box-shadow:0 4px 10px rgba(0,0,0,.1)
 }
+
+/* FORM */
+form input,form select{
+ width:100%;padding:14px;margin-bottom:12px;
+ border-radius:8px;border:1px solid #ccc;font-size:16px
+}
+
+/* POPUP */
+.popup{display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:10}
 .popup-box{
- background:#fff;width:340px;margin:80px auto;padding:20px;
- border-radius:14px;text-align:center;position:relative
+ background:#fff;width:440px;margin:90px auto;
+ padding:30px;border-radius:20px;text-align:center;position:relative
 }
-.close{position:absolute;top:5px;right:10px;font-size:22px;cursor:pointer;color:red}
+.close{position:absolute;top:10px;right:14px;font-size:26px;cursor:pointer;color:red}
 
+/* FOOTER */
 footer{
- background:#fff;padding:20px;font-size:14px;color:#555;line-height:1.6
+ background:#fff;padding:30px;
+ font-size:16px;color:#555;line-height:1.8
+}
+
+/* MOBILE */
+@media(max-width:768px){
+ body{font-size:17px}
+ .container{padding:25px}
+ .price{font-size:28px}
+ .btn{font-size:18px}
 }
 </style>
 </head>
@@ -63,10 +121,20 @@ footer{
 </header>
 
 <div class="marquee">
-UY TÍN ĐẶT LÊN HÀNG ĐẦU – GIAO DỊCH RÕ RÀNG – HỖ TRỢ ZALO
+<span>🔥 UY TÍN ĐẶT LÊN HÀNG ĐẦU – GIAO DỊCH NHANH – HỖ TRỢ ZALO 24/7 🔥</span>
 </div>
 
 <div class="container">
+
+<!-- COUNTDOWN FREE -->
+<div class="section">
+<h2>🎁 Voucher FREE 99K (00:00 mỗi ngày)</h2>
+<div class="card">
+<p>⏳ Thời gian còn lại:</p>
+<h2 id="countdown">--:--:--</h2>
+<p>Khi mở phát, liên hệ Zalo để nhận</p>
+</div>
+</div>
 
 <!-- VOUCHER -->
 <div class="section">
@@ -82,35 +150,11 @@ UY TÍN ĐẶT LÊN HÀNG ĐẦU – GIAO DỊCH RÕ RÀNG – HỖ TRỢ ZALO
 </div>
 
 <div class="card">
-<div class="tag">SALE</div>
-<div class="price">50.000đ</div>
-<p>Giảm 170k – Đơn từ 0đ</p>
-<p>Còn lại: <b id="v2"></b></p>
-<button class="btn" onclick="buy('v2')">Mua ngay</button>
-</div>
-
-<div class="card">
 <div class="tag">VIP</div>
 <div class="price">210.000đ</div>
 <p>Giảm 420k – Đơn từ 0đ</p>
 <p>Còn lại: <b id="v3"></b></p>
 <button class="btn" onclick="buy('v3')">Mua ngay</button>
-</div>
-
-<div class="card">
-<div class="tag">SIÊU SALE</div>
-<div class="price">250.000đ</div>
-<p>Giảm 700k – Đơn từ 0đ</p>
-<p>Còn lại: <b id="v4"></b></p>
-<button class="btn" onclick="buy('v4')">Mua ngay</button>
-</div>
-
-<div class="card">
-<div class="tag">LIMITED</div>
-<div class="price">320.000đ</div>
-<p>Giảm 666k – Đơn từ 0đ</p>
-<p>Còn lại: <b id="v5"></b></p>
-<button class="btn" onclick="buy('v5')">Mua ngay</button>
 </div>
 
 </div>
@@ -122,27 +166,8 @@ UY TÍN ĐẶT LÊN HÀNG ĐẦU – GIAO DỊCH RÕ RÀNG – HỖ TRỢ ZALO
 <div class="grid">
 
 <div class="card">
-<div class="tag">BẠC</div>
-<div class="price">190.000đ</div>
-<p>Rank: Bạc</p>
-<p>Follow: 2100 – 2200</p>
-<p>Còn lại: <b id="a1"></b></p>
-<button class="btn" onclick="buy('a1')">Mua Acc</button>
-</div>
-
-<div class="card">
-<div class="tag">BẠC+</div>
-<div class="price">260.000đ</div>
-<p>Rank: Bạc</p>
-<p>Follow: 2900 – 3000</p>
-<p>Còn lại: <b id="a2"></b></p>
-<button class="btn" onclick="buy('a2')">Mua Acc</button>
-</div>
-
-<div class="card">
 <div class="tag">VÀNG</div>
 <div class="price">320.000đ</div>
-<p>Rank: Vàng</p>
 <p>Follow: 4000 – 4100</p>
 <p>Còn lại: <b id="a3"></b></p>
 <button class="btn" onclick="buy('a3')">Mua Acc</button>
@@ -151,62 +176,81 @@ UY TÍN ĐẶT LÊN HÀNG ĐẦU – GIAO DỊCH RÕ RÀNG – HỖ TRỢ ZALO
 </div>
 </div>
 
+<!-- REVIEW -->
+<div class="section">
+<h2>⭐ Đánh Giá Khách Hàng</h2>
+<div class="review">⭐⭐⭐⭐⭐ Giao voucher nhanh, uy tín</div>
+<div class="review">⭐⭐⭐⭐⭐ Shop hỗ trợ rất nhiệt tình</div>
+<div class="review">⭐⭐⭐⭐⭐ Mua acc dùng ổn định</div>
+</div>
+
+<!-- BILL -->
+<div class="section">
+<h2>📤 Gửi Bill Thanh Toán</h2>
+<form>
+<input type="text" placeholder="Số điện thoại" required>
+<select>
+<option>Voucher</option>
+<option>Acc Shopee</option>
+</select>
+<input type="file" required>
+<button class="btn">Gửi Bill</button>
+</form>
+</div>
+
 </div>
 
 <!-- POPUP -->
 <div class="popup" id="popup">
 <div class="popup-box">
-<span class="close" onclick="closePopup()">×</span>
+<span class="close" onclick="popup.style.display='none'">×</span>
 <h2>💳 Thanh Toán</h2>
 <p><b>MB Bank:</b> 0376805925</p>
-<p><b>Tên:</b> Nguyễn Phi Hùng</p>
-<hr>
-<p>Sau khi thanh toán, gửi bill qua:</p>
-<p><b>Zalo:</b> 0376805925</p>
-<p><b>Telegram:</b> Xod50</p>
+<p><b>Nguyễn Phi Hùng</b></p>
+<img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=MB0376805925" width="200">
+<p>Gửi bill qua Zalo: <b>0376805925</b></p>
 </div>
 </div>
 
 <footer>
-<b>Cam kết shop:</b><br>
-• Giao đúng mô tả<br>
-• Hoàn tiền nếu lỗi từ shop<br>
-• Không lưu thông tin khách hàng<br>
-• Hỗ trợ trực tiếp qua Zalo / Telegram
+Cam kết giao dịch minh bạch – hoàn tiền nếu lỗi – hỗ trợ Zalo / Telegram
 </footer>
 
 <script>
+/* STOCK */
 let stock={
- v1: localStorage.v1 ? +localStorage.v1 : 67,
- v2: localStorage.v2 ? +localStorage.v2 : 24,
- v3: localStorage.v3 ? +localStorage.v3 : 13,
- v4: localStorage.v4 ? +localStorage.v4 : 34,
- v5: localStorage.v5 ? +localStorage.v5 : 8,
- a1: localStorage.a1 ? +localStorage.a1 : 5,
- a2: localStorage.a2 ? +localStorage.a2 : 4,
- a3: localStorage.a3 ? +localStorage.a3 : 2
+ v1:localStorage.v1?+localStorage.v1:67,
+ v3:localStorage.v3?+localStorage.v3:13,
+ a3:localStorage.a3?+localStorage.a3:2
 };
-
 function render(){
  for(let k in stock){
-   document.getElementById(k).innerText=stock[k];
-   let btn=document.querySelector(`button[onclick="buy('${k}')"]`);
-   if(stock[k]<=0){
-     btn.disabled=true;
-     btn.innerText="Hết hàng";
-   }
+  document.getElementById(k).innerText=stock[k];
  }
 }
 render();
-
 function buy(k){
- if(stock[k]<=0) return;
- stock[k]--;
- localStorage[k]=stock[k];
- render();
- popup.style.display="block";
+ if(stock[k]<=0)return;
+ stock[k]--;localStorage[k]=stock[k];
+ render();popup.style.display="block";
 }
-function closePopup(){popup.style.display="none"}
+
+/* COUNTDOWN */
+function countdown(){
+ let now=new Date();
+ let end=new Date();
+ end.setHours(24,0,0,0);
+ let diff=end-now;
+ let h=Math.floor(diff/1000/3600);
+ let m=Math.floor(diff/1000/60)%60;
+ let s=Math.floor(diff/1000)%60;
+ document.getElementById("countdown").innerText=
+  h.toString().padStart(2,"0")+":"+
+  m.toString().padStart(2,"0")+":"+
+  s.toString().padStart(2,"0");
+}
+setInterval(countdown,1000);
+countdown();
 </script>
 
 </body>
